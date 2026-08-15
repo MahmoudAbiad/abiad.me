@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أبيض | منظومة الأدوات التعليمية والذكاء الاصطناعي</title>
+    <meta name="description" content="المنصة المركزية لمشاريع أبيض التقنية - أدوات ذكاء اصطناعي متطورة لصناعة وحل وتخصيص الاختبارات للطلاب والمدرسين.">
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0b0f17;
+            color: #e2e8f0;
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(18, 24, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(20, 184, 166, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px -10px rgba(13, 148, 136, 0.25);
+        }
+        .hero-glow {
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.22) 0%, rgba(13, 148, 136, 0) 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 20%, #99f6e4 60%, #14b8a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-brand-500 selection:text-white">
+
+    <!-- خلفيات التوهج البصري -->
+    <div class="hero-glow -top-32 -right-32"></div>
+    <div class="hero-glow top-[40rem] -left-32 opacity-60"></div>
+
+    <!-- شريط التنقل (Navbar) -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- الشعار -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition">
+                        أ
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold tracking-tight text-white">منصة أبيض</span>
+                        <span class="text-[11px] text-brand-300 font-medium">Abiad Ecosystem</span>
+                    </div>
+                </a>
+
+                <!-- روابط التصفح -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                    <a href="#projects" class="hover:text-brand-300 transition">المشاريع والأدوات</a>
+                    <a href="#about" class="hover:text-brand-300 transition">عن المنصة</a>
+                    <a href="#contact" class="hover:text-brand-300 transition">تواصل معنا</a>
+                </nav>
+
+                <!-- زر مباشر لقناة التلغرام -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://t.me" target="_blank" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 text-white font-bold text-sm shadow-lg shadow-brand-600/30 hover:shadow-brand-500/50 hover:brightness-110 transition flex items-center gap-2">
+                        <i class="fa-brands fa-telegram text-base"></i>
+                        مجتمع أبيض
+                    </a>
+                </div>
+
+                <!-- زر القائمة للهواتف -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- القائمة المنسدلة للهواتف -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 bg-slate-900/95 border-b border-slate-800 space-y-3">
+            <a href="#projects" class="block px-3 py-2 rounded-md text-base text-slate-300 hover:bg-slate-800">المشاريع والأدوات</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-base text-slate-300 hover:bg-slate-800">عن المنصة</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base text-slate-300 hover:bg-slate-800">تواصل معنا</a>
+            <a href="https://t.me" target="_blank" class="block w-full text-center px-4 py-3 rounded-xl bg-brand-600 text-white font-bold">مجتمع أبيض على تلغرام</a>
+        </div>
+    </header>
+
+    <!-- الهيرو (Hero Section) -->
+    <section class="relative pt-36 pb-20 md:pt-48 md:pb-28 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-300 text-xs sm:text-sm font-semibold">
+                <i class="fa-solid fa-wand-magic-sparkles text-brand-400"></i>
+                بوابة الحلول البرمجية والتعليمية الذكية
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-black text-white leading-tight">
+                أدوات ذكية تُعيد صياغة <br class="hidden sm:inline">
+                <span class="gradient-text">التعليم والتقييم الأكاديمي</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                منظومة متكاملة من بوتات وتطبيقات الذكاء الاصطناعي، طُوّرت لتمكين الطلاب من الدراسة الذكية ومساعدة المعلمين على صناعة وتصحيح الاختبارات بأعلى سرعة وأقل جهد.
+            </p>
+
+            <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+                <a href="#projects" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 text-white font-bold text-base shadow-xl shadow-brand-500/25 hover:shadow-brand-500/40 hover:brightness-110 transition flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group"></i>
+                    استكشف مشاريع المنصة
+                </a>
+                <a href="#about" class="px-6 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700 font-semibold text-base transition">
+                    تعرّف على المؤسس
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم المشاريع (Projects Ecosystem) -->
+    <section id="projects" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-400 text-sm font-bold tracking-wider uppercase">مشاريعنا النشطة</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">اختر الأداة المناسبة لاحتياجك</h2>
+                <p class="text-slate-400 text-sm sm:text-base">بوابة الوصول المباشر إلى بوتات ومواقع منظومة أبيض المتخصصة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- مشروع 1: أبيض للطلاب -->
+                <div class="glass-card rounded-3xl p-7 flex flex-col justify-between relative overflow-hidden border-t-2 border-t-brand-500">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 text-xl">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 text-xs font-semibold border border-emerald-500/30">
+                                متاح الآن
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white">أبيض للطلاب</h3>
+                        <p class="text-xs font-semibold text-brand-400">منشئ كويزات واختبارات ذكي</p>
+                        
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            البوت التعليمي المخصص للطلاب لتحويل الملفات، المحاضرات والمناهج إلى كويزات مؤتمتة وتفاعلية لاختبار الفهم وتثبيت الحفظ فورياً.
+                        </p>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="https://students.abiad.me" class="w-full py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-brand-600 text-white font-bold text-sm border border-slate-700 hover:border-brand-500 transition flex items-center justify-center gap-2 group">
+                            <span>زيارة الموقع وبدء الاستخدام</span>
+                            <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- مشروع 2: أبيض للمعلمين -->
+                <div class="glass-card rounded-3xl p-7 flex flex-col justify-between relative overflow-hidden border-t-2 border-t-brand-500">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 text-xl">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 text-xs font-semibold border border-amber-500/30">
+                                قريباً - تجربة مجانية
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white">أبيض للمعلمين</h3>
+                        <p class="text-xs font-semibold text-brand-400">صانع النماذج الامتحانية والطباعة</p>
+                        
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            أداة مخصصة للمدرسين وأصحاب المعاهد؛ صور السبورة أو الملخص وحوّله مباشرة لنماذج امتحانية مخصصة وقابلة للتعديل والطباعة الورقية (PDF).
+                        </p>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="https://teachers.abiad.me" class="w-full py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-brand-600 text-white font-bold text-sm border border-slate-700 hover:border-brand-500 transition flex items-center justify-center gap-2 group">
+                            <span>صفحة الهبوط وقائمة الانتظار</span>
+                            <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- مشروع 3: حلّال الاختبارات -->
+                <div class="glass-card rounded-3xl p-7 flex flex-col justify-between relative overflow-hidden border-t-2 border-t-brand-500">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 text-xl">
+                                <i class="fa-solid fa-highlighter"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-300 text-xs font-semibold border border-brand-500/30">
+                                قيد التطوير
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white">أبيض - حلّال الاختبارات</h3>
+                        <p class="text-xs font-semibold text-brand-400">حل النماذج المؤتمتة وتظليل الإجابات</p>
+                        
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            أرسل أي نموذج امتحان غير محلول للبوت، وسيقوم بالتعرف على الأسئلة المؤتمتة ووضع خلفية خضراء واضحة خلف الإجابة الصحيحة بدقة فائقة.
+                        </p>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="https://t.me" target="_blank" class="w-full py-3.5 px-4 rounded-xl bg-slate-800/60 hover:bg-slate-700 text-slate-300 hover:text-white font-bold text-sm border border-slate-700 transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-telegram text-brand-400"></i>
+                            <span>ترقّب إطلاق البوت على تلغرام</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- نبذة عن المنصة والمؤسس (About & Founder) -->
+    <section id="about" class="py-20 bg-slate-950/60 border-y border-slate-800/80">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 space-y-6">
+                
+                <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-right">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white text-3xl font-extrabold shrink-0 shadow-lg shadow-brand-500/30">
+                        م
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">مؤسس ومطور المنصة</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white">محمود أبيض | Mahmoud Abiad</h3>
+                        <p class="text-slate-400 text-sm">مطور برمجيات وباحث في توظيف الذكاء الاصطناعي في التعليم</p>
+                    </div>
+                </div>
+
+                <div class="h-px bg-slate-800 my-4"></div>
+
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    انطلقت <strong>منصة أبيض</strong> من رؤية تقنية واضحة: إزالة العبء الروتيني عن العملية التعليمية واستبداله بأنظمة ذكية سريعة وفعالة. نحن نعمل على تطوير منظومة متكاملة من البرمجيات والأدوات التي تخدم آلاف الطلاب والمعلمين، وتسهل إنشاء، أتمتة، وحل التقييمات الدراسية بكفاءة عالية.
+                </p>
+
+                <!-- روابط التواصل وحساب المطور -->
+                <div id="contact" class="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-4">
+                    <a href="https://github.com/MahmoudAbiad" target="_blank" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-brand-500 text-xs font-semibold transition flex items-center gap-2">
+                        <i class="fa-brands fa-github text-sm"></i> GitHub
+                    </a>
+                    <a href="https://t.me" target="_blank" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-brand-500 text-xs font-semibold transition flex items-center gap-2">
+                        <i class="fa-brands fa-telegram text-sm text-sky-400"></i> Telegram Channel
+                    </a>
+                    <a href="mailto:contact@abiad.me" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-brand-500 text-xs font-semibold transition flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-sm text-brand-400"></i> Contact
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر (Footer) -->
+    <footer class="py-10 text-slate-500 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="text-slate-400 font-medium">منصة أبيض - جميع الحقوق محفوظة © 2026</p>
+            <p>تطوير وإشراف: محمود أبيض</p>
+        </div>
+    </footer>
+
+    <!-- سكريبت القائمة المنسدلة للهواتف -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
