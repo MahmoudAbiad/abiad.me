@@ -343,3 +343,44 @@
     }
   }
 })();
+
+
+/* GoatCounter: تتبع النقرات على الأزرار المهمة (إحصاءات مجهولة، بدون كوكيز) */
+(function () {
+  var track = function (name, title) {
+    try {
+      if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+        window.goatcounter.count({ path: name, title: title || name, event: true });
+      }
+    } catch (e) {}
+  };
+  var where = function (el) {
+    if (el.closest('header')) return 'header';
+    if (el.closest('footer')) return 'footer';
+    var sec = el.closest('section[id]');
+    return sec ? sec.id : 'page';
+  };
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var el = t.closest('a, button');
+    if (!el) return;
+    var href = el.getAttribute('href') || '';
+    var loc = where(el);
+
+    if (el.classList.contains('menu-btn')) return track('menu-toggle', 'فتح/إغلاق قائمة الموبايل');
+    if (el.classList.contains('tabs__tab')) return track(el.id === 'tab-teacher' ? 'tab-teacher' : 'tab-student', 'تبويب: ' + (el.id === 'tab-teacher' ? 'معلم' : 'طالب'));
+    if (el.id === 'q-next') return track('demo-quiz-next', 'الكويز التجريبي: التالي');
+    if (el.classList.contains('opt')) return track('demo-quiz-answer', 'الكويز التجريبي: اختيار إجابة');
+
+    if (/t\.me\/AbiadQuizMakerbot/i.test(href)) return track('open-bot-' + loc, 'فتح البوت (' + loc + ')');
+    if (/t\.me\/AbiadSupportBot/i.test(href)) return track('open-support-' + loc, 'الدعم الفني (' + loc + ')');
+    if (/t\.me\/abiadquizmaker(?!bot)/i.test(href)) return track('open-channel-' + loc, 'قناة التحديثات (' + loc + ')');
+    if (/t\.me\/Abiadd/i.test(href)) return track('open-telegram-personal-' + loc, 'تيليجرام شخصي (' + loc + ')');
+    if (/github\.com\/MahmoudAbiad/i.test(href)) return track('open-github-' + loc, 'GitHub (' + loc + ')');
+    if (/^mailto:/i.test(href)) return track('click-email-' + loc, 'البريد الإلكتروني (' + loc + ')');
+    if (/terms-of-service\.html/i.test(href)) return track('open-terms-' + loc, 'شروط الاستخدام (' + loc + ')');
+    if (/privacy-policy\.html/i.test(href)) return track('open-privacy-' + loc, 'سياسة الخصوصية (' + loc + ')');
+    if (/^#(how|audience|points|about)$/.test(href)) return track('nav-' + href.slice(1) + '-' + loc, 'تنقل إلى قسم ' + href.slice(1) + ' (' + loc + ')');
+  }, true);
+})();
