@@ -646,3 +646,82 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   .tabs__thumb.is-ready, .tabs--js .tabs__tab { transition: none; }
 }
+
+
+/* ==========================================================
+   صفحات الميزات (SEO): مسار التنقل، نص الصفحة، خطوات الإجراء،
+   جداول الحدود، الأسئلة الشائعة، الصفحات ذات الصلة
+   ========================================================== */
+
+/* مسار التنقل */
+.breadcrumb { padding-top: 20px; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; gap: 2px 10px; margin: 0; padding: 0; list-style: none; font-size: var(--step--1); color: var(--ink-soft); }
+.breadcrumb li + li::before { content: "›"; margin-inline-end: 10px; }
+.breadcrumb a { color: var(--ink-soft); }
+.breadcrumb a:hover { color: var(--pen); }
+.breadcrumb [aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+/* ترويسة الصفحة (بدون ورقة الاختبار التوضيحية) */
+.page-hero { padding-block: clamp(20px, 4vw, 40px) clamp(40px, 7vw, 72px); }
+.page-hero .hero__title { font-size: clamp(1.9rem, 4.6vw, 3rem); max-width: 26em; }
+.page-hero .hero__text { max-width: 64ch; margin-bottom: 16px; }
+.page-hero .btn-row { margin-top: 24px; }
+
+/* نص الصفحة */
+.prose p, .prose ul, .prose ol { max-width: 66ch; }
+.prose p + p, .prose p + ul, .prose ul + p { margin-top: 12px; }
+.prose ul, .prose ol { padding-inline-start: 22px; margin: 12px 0 0; }
+.prose li { margin-bottom: 8px; padding-inline-start: 4px; }
+.prose li::marker { color: var(--pen); }
+.prose h3 { font-size: var(--step-1); font-weight: 700; margin: 28px 0 8px; }
+.prose > h3:first-child { margin-top: 0; }
+
+/* خطوات الإجراء (قائمة عمودية مرقّمة) */
+.flow { margin: 0; padding: 0; list-style: none; counter-reset: flow; }
+.flow li { counter-increment: flow; position: relative; padding: 20px 0; padding-inline-start: 68px; border-top: 1px solid var(--rule); }
+.flow li:last-child { border-bottom: 1px solid var(--rule); }
+.flow li::before {
+  content: counter(flow, arabic-indic);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 14px;
+  font: 700 2.25rem/1.2 var(--font-display);
+  color: var(--pen);
+}
+.flow h3 { font-size: var(--step-1); font-weight: 700; margin-bottom: 4px; }
+.flow p { color: var(--ink-soft); max-width: 62ch; }
+.flow p + p { margin-top: 8px; }
+
+/* جداول الحدود والمواصفات (داخل .table-scroll) */
+.table-scroll caption { caption-side: top; text-align: start; font-weight: 700; font-size: var(--step-0); padding-bottom: 10px; }
+.table-scroll th[scope="row"] { border-bottom: 1px solid var(--rule); font-weight: 600; }
+
+/* الأسئلة الشائعة (details/summary بدون JavaScript) */
+.faq { max-width: 760px; }
+.faq details { border-top: 1px solid var(--rule); }
+.faq details:last-child { border-bottom: 1px solid var(--rule); }
+.faq summary { min-height: 52px; padding-block: 12px; font-weight: 600; cursor: pointer; line-height: 1.7; }
+.faq summary::marker { color: var(--pen); }
+.faq details > p { padding-bottom: 18px; color: var(--ink-soft); max-width: 66ch; }
+.faq details > p + p { margin-top: -8px; }
+
+/* بطاقات الصفحات ذات الصلة */
+.related { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.related a {
+  display: block;
+  height: 100%;
+  padding: 18px 22px;
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-ui);
+  color: var(--ink);
+  text-decoration: none;
+}
+.related a:hover { border-color: var(--pen); }
+.related strong { display: block; font-size: var(--step-1); margin-bottom: 2px; }
+.related span { color: var(--ink-soft); font-size: var(--step--1); }
+@media (min-width: 700px) { .related { grid-template-columns: repeat(2, 1fr); } }
+
+/* روابط الأدلة في التذييل */
+.site-footer__guide { grid-column: 1 / -1; display: grid; gap: 10px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.site-footer__guide p { margin: 0; font-weight: 700; }

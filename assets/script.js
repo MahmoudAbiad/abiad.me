@@ -354,11 +354,17 @@
       }
     } catch (e) {}
   };
+  /* صفحات الميزات (/slug/) تُسبق مواضعها باسم الصفحة؛ الصفحة الرئيسية والصفحات القانونية تبقى كما كانت */
+  var pageSlug = (location.pathname.match(/^\/([^\/.]+)\/?$/) || [])[1];
   var where = function (el) {
-    if (el.closest('header')) return 'header';
-    if (el.closest('footer')) return 'footer';
-    var sec = el.closest('section[id]');
-    return sec ? sec.id : 'page';
+    var loc;
+    if (el.closest('header')) loc = 'header';
+    else if (el.closest('footer')) loc = 'footer';
+    else {
+      var sec = el.closest('section[id]');
+      loc = sec ? sec.id : 'page';
+    }
+    return pageSlug ? pageSlug + '/' + loc : loc;
   };
   document.addEventListener('click', function (e) {
     var t = e.target;
@@ -381,6 +387,9 @@
     if (/^mailto:/i.test(href)) return track('click-email-' + loc, 'البريد الإلكتروني (' + loc + ')');
     if (/terms-of-service\.html/i.test(href)) return track('open-terms-' + loc, 'شروط الاستخدام (' + loc + ')');
     if (/privacy-policy\.html/i.test(href)) return track('open-privacy-' + loc, 'سياسة الخصوصية (' + loc + ')');
-    if (/^#(how|audience|points|about)$/.test(href)) return track('nav-' + href.slice(1) + '-' + loc, 'تنقل إلى قسم ' + href.slice(1) + ' (' + loc + ')');
+    var anchor = href.match(/^\/?#(how|audience|points|about)$/);
+    if (anchor) return track('nav-' + anchor[1] + '-' + loc, 'تنقل إلى قسم ' + anchor[1] + ' (' + loc + ')');
+    var page = href.match(/^\/(pdf-to-mcq|create-quiz-on-telegram|word-powerpoint-to-quiz|lecture-transcription|group-quiz|export-quiz-word-pdf|image-to-quiz|math-quiz|english-french-quiz|exam-to-quiz)\/$/);
+    if (page) return track('open-page-' + page[1] + '-' + loc, 'صفحة ' + page[1] + ' (' + loc + ')');
   }, true);
 })();
