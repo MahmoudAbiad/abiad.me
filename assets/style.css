@@ -725,3 +725,23 @@ p { margin: 0; }
 /* روابط الأدلة في التذييل */
 .site-footer__guide { grid-column: 1 / -1; display: grid; gap: 10px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
 .site-footer__guide p { margin: 0; font-weight: 700; }
+
+/* لقطات حقيقية من البوت: عرض كامل للصورة مع رابط للنسخة الأصلية. */
+.bot-gallery__eyebrow { color: var(--pen); font-weight: 700; margin-bottom: 8px; }
+.bot-gallery__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.bot-shot { margin: 0; min-width: 0; overflow: hidden; border: 1px solid var(--rule); border-radius: 16px; background: var(--paper); }
+.bot-shot__image { display: flex; align-items: center; justify-content: center; padding: 14px; background: #e7efdf; aspect-ratio: 4 / 5; }
+.bot-shot__image img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; }
+.bot-shot figcaption { padding: 20px; }
+.bot-shot h3 { font: 700 var(--step-1)/1.5 var(--font-body); margin-bottom: 8px; }
+.bot-shot p { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.8; }
+.bot-shot__zoom { display: block; color: var(--pen); font-size: .8rem; margin-top: 12px; }
+.bot-gallery__note { margin-top: 20px; color: var(--ink-soft); font-size: .8rem; }
+.bot-feature { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; gap: 48px; }
+.bot-feature .bot-shot { width: 100%; max-width: 410px; justify-self: center; }
+.bot-feature .prose .section__title { margin-bottom: 20px; }
+@media (max-width: 760px) {
+  .bot-gallery__grid { grid-template-columns: 1fr; gap: 28px; }
+  .bot-gallery__grid .bot-shot { width: 100%; max-width: 430px; justify-self: center; }
+  .bot-feature { grid-template-columns: 1fr; gap: 28px; }
+}
