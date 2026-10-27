@@ -1,3 +1,11 @@
+# Current review — 2026-10-28
+
+The original audit below is historical. Rechecked bot master at 3dbe1258c767530b7a0e9fdba7838a46e83a5142 (2026-10-27). Current changes: student/teacher Word/PDF export; review and practice recorded mistakes; free/gift/paid wallet and gift codes with expiry; optional Sham Cash recharge and challenge system; similar-pattern math problems; general-subject comprehensive questions; /help registered in handlers/start.py. Website images are authentic Telegram Web captures using an original water-cycle demonstration, cropped to exclude other chats and account balances. Homepage statistics remain explicitly dated 2026-10-01; no live statistics endpoint was added.
+
+Runtime availability of optional payment/challenge features was not inferred from source. The existing challenge switch was not visible in the observed main menu.
+
+---
+
 # Abiad Product Truth
 
 Source: bot repo, branch `master`, read-only analysis of actual code (README/docs not treated as authoritative).
