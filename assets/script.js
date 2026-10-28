@@ -322,24 +322,34 @@
       so.observe(statsRoot);
     }
 
-    /* جلب الأرقام الحية إن حُدِّد رابط في data-stats-url، وإلا تبقى الأرقام المكتوبة في الصفحة */
+    /* Public, cached aggregates only. No database key, cookies or user identity. */
     var url = statsRoot.getAttribute('data-stats-url');
-    var valid = function (v) { return typeof v === 'number' && isFinite(v) && v >= 0 && v < 1e9 && Math.floor(v) === v; };
+    var valid = function (v) { return typeof v === 'number' && Number.isSafeInteger(v) && v >= 0 && v < 1e12; };
     if (url && window.fetch) {
       var ctrl = window.AbortController ? new AbortController() : null;
-      var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 6000);
-      fetch(url, { headers: { Accept: 'application/json' }, signal: ctrl ? ctrl.signal : undefined })
-        .then(function (r) { if (!r.ok) throw new Error('bad status'); return r.json(); })
+      var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+      fetch(url, { credentials: 'omit', referrerPolicy: 'no-referrer', redirect: 'error',
+        headers: { Accept: 'application/json' }, signal: ctrl ? ctrl.signal : undefined })
+        .then(function (r) {
+          if (!r.ok || !(r.headers.get('content-type') || '').includes('application/json')) throw new Error('unavailable');
+          return r.json();
+        })
         .then(function (d) {
-          clearTimeout(timer);
-          if (!d || !valid(d.students) || !valid(d.questions)) return;
+          if (!d || !valid(d.students) || !valid(d.questions) || typeof d.updated_at !== 'string') return;
+          var updated = new Date(d.updated_at);
+          var age = Date.now() - updated.getTime();
+          if (!isFinite(age) || age < -300000 || age > 86400000) return;
+          var stamp = new Intl.DateTimeFormat('ar-SY', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Damascus' }).format(updated);
           played = true;
           animateTo(statEls.students, d.students, true);
           animateTo(statEls.questions, d.questions, true);
           var note = statsRoot.querySelector('[data-stats-note]');
-          if (note) note.textContent = 'تُحدَّث هذه الأرقام تلقائياً من البوت.';
+          if (note) {
+            note.textContent = 'إجماليات من سجلات البوت · آخر تحديث: ' + stamp + ' (توقيت دمشق). تُحدَّث دورياً.';
+          }
         })
-        .catch(function () { clearTimeout(timer); });
+        .catch(function () { /* Keep the explicitly dated fallback; never present a failed request as zero. */ })
+        .then(function () { clearTimeout(timer); });
     }
   }
 })();
@@ -383,7 +393,6 @@
     if (/t\.me\/AbiadSupportBot/i.test(href)) return track('open-support-' + loc, 'الدعم الفني (' + loc + ')');
     if (/t\.me\/abiadquizmaker(?!bot)/i.test(href)) return track('open-channel-' + loc, 'قناة التحديثات (' + loc + ')');
     if (/t\.me\/Abiadd/i.test(href)) return track('open-telegram-personal-' + loc, 'تيليجرام شخصي (' + loc + ')');
-    if (/github\.com\/MahmoudAbiad/i.test(href)) return track('open-github-' + loc, 'GitHub (' + loc + ')');
     if (/^mailto:/i.test(href)) return track('click-email-' + loc, 'البريد الإلكتروني (' + loc + ')');
     if (/terms-of-service\.html/i.test(href)) return track('open-terms-' + loc, 'شروط الاستخدام (' + loc + ')');
     if (/privacy-policy\.html/i.test(href)) return track('open-privacy-' + loc, 'سياسة الخصوصية (' + loc + ')');

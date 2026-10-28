@@ -31,4 +31,4 @@
 - [سياسة الخصوصية](https://abiad.me/privacy-policy.html)
 
 ## عن المطوّر
-- [محمود أبيض على GitHub](https://github.com/MahmoudAbiad)
+- [البريد الإلكتروني](mailto:mahmoud@abiad.me)
