@@ -761,3 +761,20 @@ p { margin: 0; }
 
 .bot-feature--phone .bot-shot { max-width: 360px; }
 .bot-feature--phone .bot-shot__image { aspect-ratio: 1080 / 2340; padding: 8px; background: #172735; }
+
+/* A readable, reviewed example generated in the bot from the displayed paragraph. */
+.source-example__source { border-inline-start: 4px solid var(--pen); padding: 24px; background: var(--mist); border-radius: var(--radius-ui); margin-bottom: 24px; }
+.source-example__source h3 { font-size: var(--step-1); margin-bottom: 10px; }
+.source-example blockquote { margin: 0; max-width: 90ch; }
+.source-example__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.source-example__question { min-width: 0; border: 1px solid var(--rule); border-radius: var(--radius-ui); padding: 24px; }
+.source-example__number { color: var(--pen); font-size: var(--step--1); font-weight: 600; margin-bottom: 10px; }
+.source-example__question h3 { font-size: var(--step-0); line-height: 1.8; }
+.source-example__question ol { padding-inline-start: 24px; margin-block: 16px; }
+.source-example__question li { padding-inline-start: 4px; margin-bottom: 6px; }
+.source-example__question details { border-top: 1px solid var(--rule); }
+.source-example__question summary { padding-block: 12px; min-height: 48px; cursor: pointer; color: var(--pen); font-weight: 600; }
+.source-example__question details p { color: var(--ink-soft); font-size: var(--step--1); }
+.source-example__question details strong { color: var(--ok); }
+.source-example__note { margin-block: 20px 24px; color: var(--ink-soft); font-size: var(--step--1); max-width: 90ch; }
+@media (max-width: 900px) { .source-example__grid { grid-template-columns: 1fr; } }
