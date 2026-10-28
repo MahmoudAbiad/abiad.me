@@ -745,3 +745,16 @@ p { margin: 0; }
   .bot-gallery__grid .bot-shot { width: 100%; max-width: 430px; justify-self: center; }
   .bot-feature { grid-template-columns: 1fr; gap: 28px; }
 }
+
+/* Native phone screenshots and the optional quiz journey. */
+.bot-gallery .bot-shot__image { aspect-ratio: 9 / 16; background: #e7efdf; }
+.journey { background: #edf3ef; border-block: 1px solid var(--rule); }
+.journey__layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
+.journey__intro .section__lede { margin-bottom: 20px; }
+.journey__how { color: var(--ink-soft); margin-bottom: 24px; max-width: 48ch; }
+.journey__shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.journey .bot-shot__image { padding: 8px; aspect-ratio: 1080 / 2340; background: #102c3d; }
+.journey .bot-shot figcaption { padding: 16px; }
+.journey .bot-shot h3 { font-size: var(--step-0); }
+@media (max-width: 900px) { .journey__layout { grid-template-columns: 1fr; } .journey__shots { max-width: 640px; width: 100%; justify-self: center; } }
+@media (max-width: 420px) { .journey__shots { gap: 10px; } .journey .bot-shot figcaption { padding: 12px; } .journey .bot-shot h3 { font-size: .95rem; } }
