@@ -758,3 +758,6 @@ p { margin: 0; }
 .journey .bot-shot h3 { font-size: var(--step-0); }
 @media (max-width: 900px) { .journey__layout { grid-template-columns: 1fr; } .journey__shots { max-width: 640px; width: 100%; justify-self: center; } }
 @media (max-width: 420px) { .journey__shots { gap: 10px; } .journey .bot-shot figcaption { padding: 12px; } .journey .bot-shot h3 { font-size: .95rem; } }
+
+.bot-feature--phone .bot-shot { max-width: 360px; }
+.bot-feature--phone .bot-shot__image { aspect-ratio: 1080 / 2340; padding: 8px; background: #172735; }
