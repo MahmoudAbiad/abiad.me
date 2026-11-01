@@ -386,8 +386,8 @@
 
     if (el.classList.contains('menu-btn')) return track('menu-toggle', 'فتح/إغلاق قائمة الموبايل');
     if (el.classList.contains('tabs__tab')) return track(el.id === 'tab-teacher' ? 'tab-teacher' : 'tab-student', 'تبويب: ' + (el.id === 'tab-teacher' ? 'معلم' : 'طالب'));
-    if (el.id === 'q-next') return track('demo-quiz-next', 'الكويز التجريبي: التالي');
-    if (el.classList.contains('opt')) return track('demo-quiz-answer', 'الكويز التجريبي: اختيار إجابة');
+    if (el.id === 'q-next') return track('demo-quiz-next', 'الاختبار التجريبي: التالي');
+    if (el.classList.contains('opt')) return track('demo-quiz-answer', 'الاختبار التجريبي: اختيار إجابة');
 
     if (/t\.me\/AbiadQuizMakerbot/i.test(href)) return track('open-bot-' + loc, 'فتح البوت (' + loc + ')');
     if (/t\.me\/AbiadSupportBot/i.test(href)) return track('open-support-' + loc, 'الدعم الفني (' + loc + ')');
