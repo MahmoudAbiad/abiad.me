@@ -132,7 +132,8 @@
         text.className = 'opt__text';
         text.textContent = label;
         if (q.ltr) text.setAttribute('dir', 'ltr');
-        b.appendChild(mark);\n        b.appendChild(text);
+        b.appendChild(mark);
+        b.appendChild(text);
         elOpts.appendChild(b);
       });
     };
@@ -190,8 +191,8 @@
 
   /* ---------- تبويبات "طالب أو معلّم" ---------- */
   document.querySelectorAll('[data-tabs]').forEach(function (root) {
-    var list = root.querySelector('[role="tablist"]');
-    var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+    var list = root.querySelector('[role=\"tablist\"]');
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('[role=\"tab\"]'));
     if (!list || !tabs.length) return;
     var panelOf = function (t) { return document.getElementById(t.getAttribute('aria-controls')); };
     var panels = tabs.map(panelOf).filter(Boolean);
@@ -378,8 +379,7 @@
               : ('إجماليات من سجلات البوت · آخر تحديث: ' + stamp + ' (توقيت دمشق). تُحدَّث دورياً.');
           }
         })
-        .catch(function () { /* Keep the explicitly dated fallback; never present a failed request as zero. */ })
-        .then(function () { clearTimeout(timer); });
+        .catch(function () { /* Keep the explicitly dated fallback; never present a failed request as zero. */ })\n        .then(function () { clearTimeout(timer); });
     }
   }
 })();
@@ -395,7 +395,7 @@
     } catch (e) {}
   };
   /* صفحات الميزات (/slug/) تُسبق مواضعها باسم الصفحة؛ الصفحة الرئيسية والصفحات القانونية تبقى كما كانت */
-  var pageSlug = (location.pathname.match(/^\/([^\/.]+)\/?$/) || [])[1];
+  var pageSlug = (location.pathname.match(/^\/(?:en\/)?([^\/.]+)\/?$/) || [])[1];
   var where = function (el) {
     var loc;
     if (el.closest('header')) loc = 'header';
@@ -428,7 +428,7 @@
     if (/privacy-policy\.html/i.test(href)) return track('open-privacy-' + loc, 'سياسة الخصوصية (' + loc + ')');
     var anchor = href.match(/^\/?#(how|audience|points|about)$/);
     if (anchor) return track('nav-' + anchor[1] + '-' + loc, 'تنقل إلى قسم ' + anchor[1] + ' (' + loc + ')');
-    var page = href.match(/^\/(pdf-to-mcq|create-quiz-on-telegram|word-powerpoint-to-quiz|lecture-transcription|group-quiz|export-quiz-word-pdf|image-to-quiz|math-quiz|english-french-quiz|exam-to-quiz)\/$/);
+    var page = href.match(/^\/(?:en\/)?(pdf-to-mcq|create-quiz-on-telegram|word-powerpoint-to-quiz|lecture-transcription|group-quiz|export-quiz-word-pdf|image-to-quiz|math-quiz|english-french-quiz|exam-to-quiz)\/$/);
     if (page) return track('open-page-' + page[1] + '-' + loc, 'صفحة ' + page[1] + ' (' + loc + ')');
   }, true);
 })();
