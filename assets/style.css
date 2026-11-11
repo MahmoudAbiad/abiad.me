@@ -778,3 +778,148 @@ p { margin: 0; }
 .source-example__question details strong { color: var(--ok); }
 .source-example__note { margin-block: 20px 24px; color: var(--ink-soft); font-size: var(--step--1); max-width: 90ch; }
 @media (max-width: 900px) { .source-example__grid { grid-template-columns: 1fr; } }
+
+
+/* ==========================================================
+   Multi-language & LTR Support (الدعم متعدد اللغات و LTR)
+   ========================================================== */
+
+html[lang="en"],
+html[dir="ltr"] {
+  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html[lang="en"] .opt__text,
+html[dir="ltr"] .opt__text {
+  background-position: left 80%;
+}
+
+/* ---------- محوّل اللغات (Language Switcher) ---------- */
+.lang-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 6px 14px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius-ui);
+  font: 600 var(--step--1)/1 var(--font-body);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.lang-btn:hover,
+.lang-btn:focus-visible {
+  border-color: var(--pen);
+}
+.lang-btn svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+}
+.lang-arrow {
+  width: 14px !important;
+  height: 14px !important;
+  transition: transform 0.2s ease;
+}
+.lang-switcher.is-open .lang-arrow {
+  transform: rotate(180deg);
+}
+.lang-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  inset-inline-end: 0;
+  min-width: 220px;
+  background: var(--paper);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius-ui);
+  box-shadow: 0 14px 34px -8px rgba(14, 26, 43, 0.2);
+  padding: 8px;
+  z-index: 100;
+}
+.lang-switcher.is-open .lang-menu {
+  display: block;
+}
+.lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border-radius: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--step--1);
+  font-weight: 500;
+  transition: background-color 0.12s ease;
+}
+.lang-option:hover {
+  background: var(--mist);
+  color: var(--pen);
+}
+.lang-option.is-active {
+  background: var(--mist);
+  color: var(--pen);
+  font-weight: 700;
+}
+.lang-tag {
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--rule);
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.lang-divider {
+  height: 1px;
+  background: var(--rule);
+  margin: 8px 0;
+}
+.lang-more {
+  padding: 4px 6px 2px;
+}
+.lang-more-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+/* إخفاء شريط Google Translate العلوي المزعج والتكامل السلس */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0 !important;
+}
+.goog-te-gadget .goog-te-combo {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1.5px solid var(--rule);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: var(--ink);
+  background: var(--paper);
+  cursor: pointer;
+  outline: none;
+}
+.goog-te-gadget .goog-te-combo:focus {
+  border-color: var(--pen);
+}
