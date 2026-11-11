@@ -27,7 +27,8 @@
   /* ---------- ورقة الاختبار التوضيحية ---------- */
   var demo = document.getElementById('demo');
   if (demo) {
-    var QUESTIONS = [
+    var isEn = document.documentElement.lang === 'en';
+    var QUESTIONS_AR = [
       {
         subject: 'الأحياء',
         text: 'ما العضية المسؤولة عن إنتاج الطاقة في الخلية؟',
@@ -51,7 +52,34 @@
         why: 'النيوتن هو القوة التي تكسب كتلة 1 كغ تسارعاً مقداره 1 م/ث².'
       }
     ];
-    var LETTERS = ['أ', 'ب', 'ج', 'د'];
+    var QUESTIONS_EN = [
+      {
+        subject: 'Biology',
+        text: 'Which organelle is responsible for cellular energy production?',
+        options: ['Nucleus', 'Mitochondria', 'Ribosome', 'Golgi apparatus'],
+        answer: 1,
+        ltr: true,
+        why: 'Mitochondria generate most of the chemical energy needed by the cell (ATP) via cellular respiration.'
+      },
+      {
+        subject: 'Chemistry',
+        text: 'What is the chemical symbol for Sodium?',
+        options: ['Na', 'K', 'Ca', 'Cl'],
+        answer: 0,
+        ltr: true,
+        why: 'The symbol Na comes from the Latin name for sodium, Natrium.'
+      },
+      {
+        subject: 'Physics',
+        text: 'What is the SI unit of force?',
+        options: ['Joule', 'Newton', 'Watt', 'Pascal'],
+        answer: 1,
+        ltr: true,
+        why: 'The newton is the force required to accelerate 1 kilogram of mass at 1 meter per second squared.'
+      }
+    ];
+    var QUESTIONS = isEn ? QUESTIONS_EN : QUESTIONS_AR;
+    var LETTERS = isEn ? ['A', 'B', 'C', 'D'] : ['أ', 'ب', 'ج', 'د'];
     var SVG_NS = 'http://www.w3.org/2000/svg';
 
     var elSubject = document.getElementById('q-subject');
@@ -86,7 +114,7 @@
     var render = function () {
       var q = QUESTIONS[current];
       elSubject.textContent = q.subject;
-      elCount.textContent = 'سؤال ' + (current + 1) + ' من ' + QUESTIONS.length;
+      elCount.textContent = (isEn ? 'Question ' : 'سؤال ') + (current + 1) + (isEn ? ' of ' : ' من ') + QUESTIONS.length;
       elText.textContent = q.text;
       elFeedback.textContent = '';
       elFeedback.className = 'sheet__feedback';
@@ -104,8 +132,7 @@
         text.className = 'opt__text';
         text.textContent = label;
         if (q.ltr) text.setAttribute('dir', 'ltr');
-        b.appendChild(mark);
-        b.appendChild(text);
+        b.appendChild(mark);\n        b.appendChild(text);
         elOpts.appendChild(b);
       });
     };
@@ -125,7 +152,7 @@
       }
       elFeedback.textContent = '';
       var head = document.createElement('strong');
-      head.textContent = right ? 'إجابة صحيحة' : 'إجابة خاطئة، الصحيح: ' + q.options[q.answer];
+      head.textContent = right ? (isEn ? 'Correct Answer' : 'إجابة صحيحة') : ((isEn ? 'Incorrect. Correct: ' : 'إجابة خاطئة، الصحيح: ') + q.options[q.answer]);
       elFeedback.appendChild(head);
       elFeedback.appendChild(document.createTextNode(q.why));
       elFeedback.className = 'sheet__feedback ' + (right ? 'is-right' : 'is-wrong');
@@ -339,13 +366,16 @@
           var updated = new Date(d.updated_at);
           var age = Date.now() - updated.getTime();
           if (!isFinite(age) || age < -300000 || age > 86400000) return;
-          var stamp = new Intl.DateTimeFormat('ar-SY', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Damascus' }).format(updated);
+          var isEnglish = document.documentElement.lang === 'en';
+          var stamp = new Intl.DateTimeFormat(isEnglish ? 'en-US' : 'ar-SY', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Damascus' }).format(updated);
           played = true;
           animateTo(statEls.students, d.students, true);
           animateTo(statEls.questions, d.questions, true);
           var note = statsRoot.querySelector('[data-stats-note]');
           if (note) {
-            note.textContent = 'إجماليات من سجلات البوت · آخر تحديث: ' + stamp + ' (توقيت دمشق). تُحدَّث دورياً.';
+            note.textContent = isEnglish
+              ? ('Aggregates from bot database · Last updated: ' + stamp + ' (Damascus Time). Updated periodically.')
+              : ('إجماليات من سجلات البوت · آخر تحديث: ' + stamp + ' (توقيت دمشق). تُحدَّث دورياً.');
           }
         })
         .catch(function () { /* Keep the explicitly dated fallback; never present a failed request as zero. */ })
@@ -401,4 +431,69 @@
     var page = href.match(/^\/(pdf-to-mcq|create-quiz-on-telegram|word-powerpoint-to-quiz|lecture-transcription|group-quiz|export-quiz-word-pdf|image-to-quiz|math-quiz|english-french-quiz|exam-to-quiz)\/$/);
     if (page) return track('open-page-' + page[1] + '-' + loc, 'صفحة ' + page[1] + ' (' + loc + ')');
   }, true);
+})();
+
+
+/* ---------- محوّل اللغات وإدارة تفضيل الزائر ---------- */
+(function() {
+  var switcher = document.getElementById('lang-switcher');
+  if (!switcher) return;
+
+  var btn = switcher.querySelector('.lang-btn');
+  var menu = switcher.querySelector('.lang-menu');
+  var options = switcher.querySelectorAll('.lang-option');
+  var translateLoaded = false;
+
+  var loadGoogleTranslate = function() {
+    if (translateLoaded) return;
+    translateLoaded = true;
+    window.googleTranslateElementInit = function() {
+      if (window.google && window.google.translate) {
+        new window.google.translate.TranslateElement({
+          pageLanguage: document.documentElement.lang || 'ar',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    };
+    var script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    document.head.appendChild(script);
+  };
+
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isOpen = switcher.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (isOpen) {
+      loadGoogleTranslate();
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!switcher.contains(e.target)) {
+      switcher.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && switcher.classList.contains('is-open')) {
+      switcher.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.focus();
+    }
+  });
+
+  options.forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      var lang = opt.getAttribute('data-lang');
+      if (lang) {
+        try {
+          localStorage.setItem('abiad_lang', lang);
+        } catch (err) {}
+      }
+    });
+  });
 })();
