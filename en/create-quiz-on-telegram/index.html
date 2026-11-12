@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Create a Quiz on Telegram from Files or Photos | Abiad</title>
+<meta name="description" content="Step-by-step practical guide to creating interactive quizzes on Telegram using Abiad Bot: what files to send, customizing difficulty, taking tests, and sharing.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="/assets/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Abiad - Smart AI Quiz Maker">
+<meta property="og:title" content="How to Create a Quiz on Telegram from Files or Photos | Abiad">
+<meta property="og:description" content="Step-by-step practical guide to creating interactive quizzes on Telegram using Abiad Bot: what files to send, customizing difficulty, taking tests, and sharing.">
+<meta property="og:image" content="https://abiad.me/assets/og-image-v5.jpg?v=6">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://abiad.me/en/create-quiz-on-telegram/">
+<link rel="alternate" hreflang="ar" href="https://abiad.me/create-quiz-on-telegram/">
+<link rel="alternate" hreflang="en" href="https://abiad.me/en/create-quiz-on-telegram/">
+<link rel="alternate" hreflang="x-default" href="https://abiad.me/en/create-quiz-on-telegram/">
+<meta property="og:url" content="https://abiad.me/en/create-quiz-on-telegram/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Abiad Logo - Smart AI Quiz Maker">
+<meta name="twitter:title" content="How to Create a Quiz on Telegram from Files or Photos | Abiad">
+<meta name="twitter:description" content="Step-by-step practical guide to creating interactive quizzes on Telegram using Abiad Bot: what files to send, customizing difficulty, taking tests, and sharing.">
+<meta name="twitter:image" content="https://abiad.me/assets/og-image-v5.jpg?v=6">
+
+<script>
+(function() {
+  var pref = localStorage.getItem('abiad_lang');
+  if (pref === 'ar') {
+    location.replace('/create-quiz-on-telegram/');
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://abiad.me/en/create-quiz-on-telegram/#webpage",
+      "url": "https://abiad.me/en/create-quiz-on-telegram/",
+      "name": "How to Create a Quiz on Telegram from Files or Photos | Abiad",
+      "description": "Step-by-step practical guide to creating interactive quizzes on Telegram using Abiad Bot: what files to send, customizing difficulty, taking tests, and sharing.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://abiad.me/en/#website"
+      },
+      "about": {
+        "@id": "https://abiad.me/en/#app"
+      },
+      "breadcrumb": {
+        "@id": "https://abiad.me/en/create-quiz-on-telegram/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://abiad.me/en/create-quiz-on-telegram/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://abiad.me/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How to Create a Quiz on Telegram",
+          "item": "https://abiad.me/en/create-quiz-on-telegram/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=13">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <a class="brand" href="/en/"><img class="brand__mark" src="/assets/mark.png?v=2" alt="" width="40" height="40"><span>Abiad</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="/en/#how">How It Works</a>
+      <a href="/en/create-quiz-on-telegram/" aria-current="page">User Guide</a>
+      <a href="/en/#audience">Student or Teacher</a>
+      <a href="/en/#points">Credits</a>
+      <a href="/en/#about">About Developer</a>
+    </nav>
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current">English</span>
+        <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="lang-menu" role="menu">
+        <a href="/create-quiz-on-telegram/" class="lang-option" data-lang="ar" role="menuitem">
+          <span class="lang-name">العربية</span>
+          <span class="lang-tag">Original</span>
+        </a>
+        <a href="/en/create-quiz-on-telegram/" class="lang-option is-active" data-lang="en" role="menuitem">
+          <span class="lang-name">English</span>
+          <span class="lang-tag">Global</span>
+        </a>
+        <div class="lang-divider"></div>
+        <div class="lang-more">
+          <span class="lang-more-label">More languages:</span>
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn--pen btn--sm site-header__cta" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Start on Telegram</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="wrap">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li aria-current="page">How to Create a Quiz on Telegram</li>
+    </ol>
+  </div>
+</nav>
+
+<section class="hero page-hero" id="intro" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 class="hero__title" id="page-title">How to Create a Quiz on Telegram from Your Study Material</h1>
+    <p class="hero__text">To create an interactive quiz on Telegram, you need three elements: study material (written text, photos, or recordings), a tool to transform it into questions, and an environment to solve them. The most practical approach is sending the material directly to a bot that generates questions within the chat itself, enabling you to practice without switching between apps.</p>
+    <p class="hero__text">That is precisely what «Abiad - Smart AI Quiz Maker» provides: a dedicated Telegram bot (<span class="ltr">@AbiadQuizMakerbot</span>) that converts your submissions into 4-option multiple-choice interactive quizzes. Note that abiad.me is an informational overview of the bot; quizzes are solved inside Telegram, not on this website. You can explore a broader overview on our <a href="/en/">Home page</a>.</p>
+    <div class="btn-row">
+      <a class="btn btn--pen" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Start on Telegram</span></a>
+      <a class="btn btn--line" href="#how-it-works">Read the Steps</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="how-it-works" aria-labelledby="how-it-works-title">
+  <div class="wrap">
+    <h2 class="section__title" id="how-it-works-title">Steps to Create Your Quiz</h2>
+    <ol class="flow">
+      <li>
+        <h3>Choose the material you want to be tested on</h3>
+        <p>Questions are synthesized directly from your submitted content, so send the specific topic or chapter you are studying. Material can be a file, photos, text, or an audio recording—supported formats are detailed in the section below.</p>
+      </li>
+      <li>
+        <h3>Open the bot and submit your content</h3>
+        <p>Click «Start on Telegram» and send your material into the chat: files as documents, photos as images, and text as a standard message.</p>
+      </li>
+      <li>
+        <h3>Customize your quiz settings</h3>
+        <p>Select your desired question count (from 1 to 120), difficulty level, and question style according to your subject. You can also provide custom prompts (up to 150 characters). Credits are deducted prior to generation and automatically refunded if a request fails.</p>
+      </li>
+      <li>
+        <h3>Solve the quiz directly in Telegram</h3>
+        <p>Questions arrive as interactive polls within the chat, each offering four answer choices. You can request helpful hints while answering, and detailed explanations appear immediately once a choice is selected.</p>
+      </li>
+      <li>
+        <h3>Review your results and take action</h3>
+        <p>The completion screen showcases your score, percentage, and personal best. You can bookmark the quiz for later review, share it with classmates via link (which opens for free without consuming their credits), or <a href="/en/export-quiz-word-pdf/">export to Word or PDF</a> with student or answer key versions. If you make errors, dedicated review and practice modes appear. If you are a channel or group admin, you can also <a href="/en/group-quiz/">launch the quiz for your community</a>.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="inputs" aria-labelledby="inputs-title">
+  <div class="wrap">
+    <h2 class="section__title" id="inputs-title">What You Can Send</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>Types of Study Material Accepted by Abiad Bot</caption>
+        <thead><tr><th scope="col">Material</th><th scope="col">What You Need to Know</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span class="ltr">PDF</span> Document</th><td>Up to 20 MB and 100 pages when sent within Telegram. Details in our <a href="/en/pdf-to-mcq/">PDF to Multiple-Choice Questions Guide</a>.</td></tr>
+          <tr><th scope="row"><span class="ltr">Word</span>, <span class="ltr">PowerPoint</span>, or <span class="ltr">txt</span> File</th><td>Supports <span class="ltr">docx</span>, <span class="ltr">pptx</span>, and <span class="ltr">txt</span> files. Text content is extracted; legacy <span class="ltr">doc</span> and <span class="ltr">ppt</span> formats are not supported. Details in our <a href="/en/word-powerpoint-to-quiz/">Word & PowerPoint to Quiz Guide</a>.</td></tr>
+          <tr><th scope="row">Photo or Photo Album</th><td>A single image or an album of up to 10 photos within Telegram. Details in our <a href="/en/image-to-quiz/">Image to Quiz Guide</a>.</td></tr>
+          <tr><th scope="row">Direct Text</th><td>Paste text directly into a message, with a length between 30 and 8,000 characters.</td></tr>
+          <tr><th scope="row">Lecture Audio Recording</th><td>Audio is automatically transcribed (up to 4 hours), allowing you to create quizzes from lectures. Details in our <a href="/en/lecture-transcription/">Lecture Audio Transcription Guide</a>.</td></tr>
+          <tr><th scope="row">Pre-existing Multiple-Choice Exam</th><td>The bot automatically detects existing exams, allowing you to extract original questions with answer keys or let AI solve them. Details in our <a href="/en/exam-to-quiz/">Exam to Interactive Quiz Guide</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="options" aria-labelledby="options-title">
+  <div class="wrap">
+    <h2 class="section__title" id="options-title">Pre-Generation Configuration Options</h2>
+    <dl class="uses">
+      <div class="uses__row"><dt>Question Count</dt><dd>From 1 to 120 questions per generated quiz.</dd></div>
+      <div class="uses__row"><dt>Difficulty Level</dt><dd>Easy, Medium, Advanced, or Progressive (starts easy and gradually increases in difficulty).</dd></div>
+      <div class="uses__row"><dt>Question Style by Subject</dt><dd>In Mathematics: problems from content, new problems following the same pattern, formulas, or theory. In English & French: grammar, reading comprehension, or comprehensive topic questions. In other subjects: comprehensive questions or custom preferences up to 150 characters.</dd></div>
+      <div class="uses__row"><dt>Language for English & French Questions</dt><dd>Choose to display questions with Arabic translations or keep them exclusively in their original language. Details in our <a href="/en/english-french-quiz/">Language Quiz Guide</a>.</dd></div>
+      <div class="uses__row"><dt>Mathematics & Formula Quizzes</dt><dd>Equations, formulas, tables, and matrices are rendered as high-clarity images within the question, accompanied by lettered choices. Details in our <a href="/en/math-quiz/">Math Quiz Guide</a>.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" id="points" aria-labelledby="points-title">
+  <div class="wrap">
+    <h2 class="section__title" id="points-title">Credits in Brief</h2>
+    <div class="prose">
+      <p>Quiz generation uses credits according to the size of the material and the number of questions requested. You start with a free welcome balance, receive periodic refills, and can earn extra credits by inviting classmates. Credits are deducted prior to generation and automatically refunded if a request encounters an issue. For full details, see the <a href="/en/#points">Credits & Usage</a> section on our home page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="mistake-practice" aria-labelledby="mistake-practice-title">
+  <div class="wrap bot-feature">
+    <div class="prose">
+      <h2 class="section__title" id="mistake-practice-title">Don't Stop at the Score: Practice Your Mistakes</h2>
+      <p>Whenever a completed quiz includes incorrect answers, the «Review Mistakes» and «Practice Mistakes» options appear. Review detailed explanations or re-attempt missed questions in a focused follow-up round containing only the questions you got wrong.</p>
+      <p>Mistake practice reuses your existing questions without generating new ones or consuming additional credits, and it leaves your original quiz score and leaderboard standing unchanged. Skipped questions are not counted as errors, and passing over a question during practice does not mark it as mastered.</p>
+    </div>
+    <figure class="bot-shot">
+      <a class="bot-shot__image" href="/assets/screenshots/result-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge screenshot: Review mistakes and practice (opens in new tab)">
+        <img src="/assets/screenshots/result-mobile.jpg" alt="Mobile quiz results screen showing review mistakes and practice buttons." width="1080" height="2340" loading="lazy" decoding="async">
+      </a>
+      <figcaption><h3>Review & Practice Your Mistakes</h3><p>After your attempt, open mistake review or start a focused practice round on questions you missed.</p><span class="bot-shot__zoom">Click image to enlarge</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--mist" id="limitations" aria-labelledby="limitations-title">
+  <div class="wrap">
+    <h2 class="section__title" id="limitations-title">Important Limitations to Keep in Mind</h2>
+    <div class="prose">
+      <ul>
+        <li>Questions are strictly 4-option multiple-choice format; true/false, fill-in-the-blank, and essay questions are not supported.</li>
+        <li>Quizzes are solved entirely within Telegram; tests cannot be taken on this website.</li>
+        <li>Questions are synthesized with artificial intelligence and may occasionally contain inaccuracies; always review answers before final reliance.</li>
+        <li>Most bot commands run in private direct chat; group quizzes can only be initiated by group or channel administrators.</li>
+        <li>Abiad is designed for independent study, active recall, and revision; using it during live proctored exams or for academic dishonesty is strictly prohibited. Please consult our <a href="/en/terms-of-service.html">Terms of Service</a>.</li>
+        <li>Embedded images inside Word and PowerPoint files are not parsed, and legacy .doc and .ppt formats are not supported.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <h2 class="section__title" id="faq-title">Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Is the service free?</summary>
+        <p>You start with a complimentary welcome balance and receive periodic refills, but generating quizzes consumes credits—usage is not unlimited. You can acquire additional credits by inviting friends or redeeming gift codes. Check the bot's credit store or contact <a href="https://t.me/Abiadd" target="_blank" rel="noopener noreferrer"><span class="ltr">@Abiadd</span></a> for top-up options.</p>
+      </details>
+      <details>
+        <summary>How many questions can I request in a single quiz?</summary>
+        <p>From 1 up to 120 questions per quiz.</p>
+      </details>
+      <details>
+        <summary>Can I edit a question after generating a quiz?</summary>
+        <p>Yes. The quiz creator or a group administrator can reply with a period (.) to any question poll to modify its question text and answer options.</p>
+      </details>
+      <details>
+        <summary>Can I share the quiz with classmates?</summary>
+        <p>Yes, through a shareable link that any Telegram user can open. Opening and taking a shared quiz does not deduct credits from the recipient.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="related" aria-labelledby="related-title">
+  <div class="wrap">
+    <h2 class="section__title" id="related-title">Detailed User Guides</h2>
+    <ul class="related">
+      <li><a href="/en/pdf-to-mcq/"><strong>Convert <span class="ltr">PDF</span> to Multiple-Choice Questions</strong><span>File size limits, page counts, and pre-generation settings.</span></a></li>
+      <li><a href="/en/word-powerpoint-to-quiz/"><strong>Create Quizzes from <span class="ltr">Word</span> or <span class="ltr">PowerPoint</span></strong><span>Supported content in <span class="ltr">docx</span>, <span class="ltr">pptx</span>, and <span class="ltr">txt</span> files.</span></a></li>
+      <li><a href="/en/image-to-quiz/"><strong>Generate Quizzes from Photos & Albums</strong><span>Textbook pages and study notes: Telegram and web upload limits.</span></a></li>
+      <li><a href="/en/lecture-transcription/"><strong>Audio Lecture Transcription & Summaries</strong><span>Convert lecture recordings into text, summaries, files, or quizzes.</span></a></li>
+      <li><a href="/en/group-quiz/"><strong>Group Quizzes in Telegram Groups & Channels</strong><span>Competitive mode, anonymous mode, and countdown timers for admins.</span></a></li>
+      <li><a href="/en/export-quiz-word-pdf/"><strong>Download Quizzes in <span class="ltr">Word</span> or <span class="ltr">PDF</span> with Answer Keys</strong><span>Three export modes and formatted printable documents.</span></a></li>
+      <li><a href="/en/math-quiz/"><strong>Math Quizzes with Formulas & Equations</strong><span>Problems, formulas, and theory with equations, tables, and matrices rendered as images.</span></a></li>
+      <li><a href="/en/english-french-quiz/"><strong>Language Quizzes for English & French</strong><span>Grammar, reading comprehension, or general tests with bilingual options.</span></a></li>
+      <li><a href="/en/exam-to-quiz/"><strong>Convert Past Exams into Interactive Quizzes</strong><span>Extract existing multiple-choice exams with original answer keys or let AI solve them.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band" id="cta" aria-labelledby="cta-title">
+  <div class="wrap cta-band__grid">
+    <div>
+      <h2 class="cta-band__title" id="cta-title">Create Your First Quiz Today</h2>
+      <p class="cta-band__text">Open the chat with Abiad Bot on Telegram, send your study material, and configure your quiz settings.</p>
+      <a class="btn btn--pen" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Start on Telegram</span></a>
+      <div class="cta-band__links">
+        <a href="https://t.me/abiadquizmaker" target="_blank" rel="noopener noreferrer">Updates Channel</a>
+        <a href="https://t.me/AbiadSupportBot" target="_blank" rel="noopener noreferrer">Technical Support</a>
+      </div>
+    </div>
+    <img class="cta-band__logo" src="/assets/logo.jpg?v=3" alt="Abiad Logo - Smart AI Quiz Maker" width="240" height="240" loading="lazy">
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div class="site-footer__id">
+      <img src="/assets/mark.png?v=2" alt="" width="44" height="44" loading="lazy">
+      <div>
+        <p><strong>Abiad - Smart AI Quiz Maker</strong> — All rights reserved © 2026</p>
+        <p class="site-footer__scope">Telegram Bot developed by Mahmoud Abiad.</p>
+      </div>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/terms-of-service.html">Terms of Service</a></li>
+      <li><a href="/en/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="https://t.me/AbiadSupportBot" target="_blank" rel="noopener noreferrer">Technical Support</a></li>
+    </ul>
+    <nav class="site-footer__guide" aria-label="User Guides">
+      <p>User Guides</p>
+      <ul class="site-footer__links">
+        <li><a href="/en/create-quiz-on-telegram/">Quiz Creation Guide</a></li>
+        <li><a href="/en/pdf-to-mcq/"><span class="ltr">PDF</span> to Questions</a></li>
+        <li><a href="/en/word-powerpoint-to-quiz/"><span class="ltr">Word</span> & <span class="ltr">PowerPoint</span> to Quiz</a></li>
+        <li><a href="/en/image-to-quiz/">Images to Quiz</a></li>
+        <li><a href="/en/lecture-transcription/">Lecture Transcription</a></li>
+        <li><a href="/en/group-quiz/">Group Quiz</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script data-goatcounter="https://abiad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="/assets/script.js?v=13"></script>
+</body>
+</html>
