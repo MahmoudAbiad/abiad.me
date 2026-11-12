@@ -191,8 +191,8 @@
 
   /* ---------- تبويبات "طالب أو معلّم" ---------- */
   document.querySelectorAll('[data-tabs]').forEach(function (root) {
-    var list = root.querySelector('[role=\"tablist\"]');
-    var tabs = Array.prototype.slice.call(root.querySelectorAll('[role=\"tab\"]'));
+    var list = root.querySelector('[role="tablist"]');
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
     if (!list || !tabs.length) return;
     var panelOf = function (t) { return document.getElementById(t.getAttribute('aria-controls')); };
     var panels = tabs.map(panelOf).filter(Boolean);
@@ -379,7 +379,8 @@
               : ('إجماليات من سجلات البوت · آخر تحديث: ' + stamp + ' (توقيت دمشق). تُحدَّث دورياً.');
           }
         })
-        .catch(function () { /* Keep the explicitly dated fallback; never present a failed request as zero. */ })\n        .then(function () { clearTimeout(timer); });
+        .catch(function () { /* Keep the explicitly dated fallback; never present a failed request as zero. */ })
+        .then(function () { clearTimeout(timer); });
     }
   }
 })();
