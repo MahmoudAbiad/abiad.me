@@ -386,8 +386,79 @@
 })();
 
 
-/* GoatCounter: تتبع النقرات على الأزرار المهمة (إحصاءات مجهولة، بدون كوكيز) */
+/* تتبع مصدر الزيارة من منصات التواصل الاجتماعي وتمريره إلى رابط البوت + GoatCounter */
 (function () {
+  var SOURCE_ALIASES = {
+    'ig_mah': 'ig_mah',
+    'ig_mah_1x1': 'ig_mah',
+    'mah_1x1': 'ig_mah',
+    'ig_bot': 'ig_bot',
+    'ig_abiadquizbot': 'ig_bot',
+    'ig_abiad': 'ig_bot',
+    'abiadquizbot': 'ig_bot',
+    'fb': 'fb',
+    'facebook': 'fb',
+    'fb_bot': 'fb',
+    'tg_channel': 'tg_channel',
+    'channel': 'tg_channel',
+    'abiadquizmaker': 'tg_channel'
+  };
+  var SOURCE_TITLES = {
+    'ig_mah': 'إنستغرام (@mah_1x1)',
+    'ig_bot': 'إنستغرام (@abiadquizbot)',
+    'fb': 'فيسبوك البوت',
+    'tg_channel': 'قناة التلغرام'
+  };
+  var STORAGE_KEY = 'abiad_join_src';
+
+  var normalizeSource = function (raw) {
+    if (!raw || typeof raw !== 'string') return null;
+    var cleaned = raw.trim().toLowerCase();
+    if (cleaned.indexOf('web_') === 0) cleaned = cleaned.slice(4);
+    return SOURCE_ALIASES[cleaned] || null;
+  };
+
+  var detectSource = function () {
+    var fromUrl = null;
+    try {
+      var params = new URLSearchParams(window.location.search || '');
+      fromUrl = normalizeSource(
+        params.get('src') || params.get('source') || params.get('utm_source') || params.get('ref')
+      );
+      if (fromUrl) {
+        try { sessionStorage.setItem(STORAGE_KEY, fromUrl); } catch (e) {}
+        try { localStorage.setItem(STORAGE_KEY, fromUrl); } catch (e) {}
+        return { src: fromUrl, freshVisit: true };
+      }
+    } catch (e) {}
+    var stored = null;
+    try { stored = normalizeSource(sessionStorage.getItem(STORAGE_KEY)); } catch (e) {}
+    if (!stored) {
+      try { stored = normalizeSource(localStorage.getItem(STORAGE_KEY)); } catch (e) {}
+    }
+    return { src: stored, freshVisit: false };
+  };
+
+  var detected = detectSource();
+  var activeSrc = detected.src;
+  var botStartParam = activeSrc ? ('web_' + activeSrc) : 'website';
+
+  /* تحديث جميع أزرار وروابط البوت في الصفحة لتحمل رمز المصدر نحو تيليجرام */
+  if (activeSrc) {
+    var botLinks = document.querySelectorAll('a[href*="t.me/AbiadQuizMakerbot"]');
+    for (var i = 0; i < botLinks.length; i++) {
+      var a = botLinks[i];
+      var href = a.getAttribute('href') || '';
+      if (/([?&])start=[^&#]*/i.test(href)) {
+        a.setAttribute('href', href.replace(/([?&])start=[^&#]*/i, '$1start=' + botStartParam));
+      } else {
+        var sep = href.indexOf('?') === -1 ? '?' : '&';
+        a.setAttribute('href', href + sep + 'start=' + botStartParam);
+      }
+    }
+  }
+
+  /* GoatCounter: تتبع النقرات على الأزرار المهمة + مصدر الزيارة (إحصاءات مجهولة، بدون كوكيز) */
   var track = function (name, title) {
     try {
       if (window.goatcounter && typeof window.goatcounter.count === 'function') {
@@ -395,6 +466,24 @@
       }
     } catch (e) {}
   };
+
+  /* تسجيل حدث وصول الزائر من منصة اجتماعية محددة مرة واحدة لكل جلسة */
+  if (detected.freshVisit && activeSrc) {
+    var fireVisitSource = function () {
+      var visitKey = 'abiad_gc_visit_' + activeSrc;
+      try {
+        if (sessionStorage.getItem(visitKey)) return;
+        sessionStorage.setItem(visitKey, '1');
+      } catch (e) {}
+      track('visit-src-' + activeSrc, 'زيارة الموقع من: ' + (SOURCE_TITLES[activeSrc] || activeSrc));
+    };
+    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+      fireVisitSource();
+    } else {
+      window.addEventListener('load', function () { setTimeout(fireVisitSource, 600); });
+    }
+  }
+
   /* صفحات الميزات (/slug/) تُسبق مواضعها باسم الصفحة؛ الصفحة الرئيسية والصفحات القانونية تبقى كما كانت */
   var pageSlug = (location.pathname.match(/^\/(?:en\/)?([^\/.]+)\/?$/) || [])[1];
   var where = function (el) {
@@ -420,7 +509,12 @@
     if (el.id === 'q-next') return track('demo-quiz-next', 'الاختبار التجريبي: التالي');
     if (el.classList.contains('opt')) return track('demo-quiz-answer', 'الاختبار التجريبي: اختيار إجابة');
 
-    if (/t\.me\/AbiadQuizMakerbot/i.test(href)) return track('open-bot-' + loc, 'فتح البوت (' + loc + ')');
+    if (/t\.me\/AbiadQuizMakerbot/i.test(href)) {
+      if (activeSrc) {
+        track('open-bot-src-' + activeSrc, 'فتح البوت عبر الموقع من: ' + (SOURCE_TITLES[activeSrc] || activeSrc));
+      }
+      return track('open-bot-' + loc, 'فتح البوت (' + loc + ')');
+    }
     if (/t\.me\/AbiadSupportBot/i.test(href)) return track('open-support-' + loc, 'الدعم الفني (' + loc + ')');
     if (/t\.me\/abiadquizmaker(?!bot)/i.test(href)) return track('open-channel-' + loc, 'قناة التحديثات (' + loc + ')');
     if (/t\.me\/Abiadd/i.test(href)) return track('open-telegram-personal-' + loc, 'تيليجرام شخصي (' + loc + ')');
