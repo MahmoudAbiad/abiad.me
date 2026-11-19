@@ -66,7 +66,13 @@
         "https://t.me/AbiadQuizMakerbot",
         "https://t.me/abiadquizmaker"
       ],
-      "inLanguage": "ar",
+      "inLanguage": ["ar", "en", "tr", "fr", "de", "fa"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "رصيد ترحيبي مجاني وتجديد يومي مجاني مع خيارات شحن باقات إضافية داخل البوت."
+      },
       "description": "ولّد أسئلة بالذكاء الاصطناعي من ملفات PDF والصور والنصوص والمحاضرات مع بوت أبيض على تيليجرام. حلّ الاختبار، راجع أخطاءك، وصدّر نسخة PDF أو Word.",
       "featureList": [
         "تحويل ملفات PDF وWord وPowerPoint والصور والنصوص وتسجيلات المحاضرات إلى اختبارات اختيار من متعدد",
@@ -94,12 +100,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem('abiad_lang');
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    if (userLang && !userLang.toLowerCase().startsWith('ar')) {
-      location.replace('/en/');
-    }
-  } else if (pref === 'en') {
+  if (pref === 'en') {
     location.replace('/en/');
   }
 })();
@@ -206,7 +207,7 @@
       <li><strong><span class="ltr">Word</span> و<span class="ltr">PowerPoint</span></strong><span>مستندات <span class="ltr">docx</span> وعروض <span class="ltr">pptx</span> والنصوص. <a href="/word-powerpoint-to-quiz/">دليل المستندات</a></span></li>
       <li><strong>صور وألبومات</strong><span>صفحات الكتاب أو الملاحظات المصوّرة. <a href="/image-to-quiz/">دليل الصور</a></span></li>
       <li><strong>محاضرات صوتية</strong><span>تفريغ وتلخيص وتحويل الصوت لاختبار. <a href="/lecture-transcription/">دليل الصوت</a></span></li>
-      <li><strong>موضوع أو اختبار جاهز</strong><span>اكتب موضوعاً مباشرة أو <a href="/exam-to-quiz/">حوّل اختباراً جاهزاً</a> إلى اختبار تفاعلي.</span></li>
+      <li><strong>اختبار من موضوع أو جاهز</strong><span><a href="/topic-to-quiz/">ولّد اختباراً من موضوع</a> أو <a href="/exam-to-quiz/">حوّل اختباراً جاهزاً</a> لتفاعلي.</span></li>
       <li><strong>رياضيات ولغات</strong><span><a href="/math-quiz/">معادلات ومصفوفات مصوّرة</a> و<a href="/english-french-quiz/">اختبارات إنجليزية وفرنسية</a>.</span></li>
     </ul>
   </div>
@@ -270,7 +271,7 @@
 
       <div class="tabs__panel" role="tabpanel" id="panel-student" aria-labelledby="tab-student" tabindex="0">
         <dl class="uses">
-          <div class="uses__row"><dt>اختبر فهمك بدل القراءة</dt><dd>أرسل المحاضرة أو صور الملخص، أو اطلب «اختبار من موضوع» للمراجعة السريعة.</dd></div>
+          <div class="uses__row"><dt>اختبر فهمك بدل القراءة</dt><dd>أرسل المحاضرة أو صور الملخص، أو اطلب <a href="/topic-to-quiz/">«اختبار من موضوع»</a> للمراجعة السريعة.</dd></div>
           <div class="uses__row"><dt>فرّغ المحاضرات الصوتية</dt><dd>ارفع التسجيلات الطويلة عبر صفحة الرفع داخل تيليجرام، و<a href="/lecture-transcription/">فرّغها ولخّصها</a> أو حوّلها لاختبار.</dd></div>
           <div class="uses__row"><dt>نظّم مفضلتك وأخطاءك</dt><dd>احفظ اختباراتك في أقسام مرتّبة، وأعد التدرّب على إجاباتك الخاطئة قبل الامتحان.</dd></div>
           <div class="uses__row"><dt>ذاكر مع زملائك</dt><dd>شارك رابط الاختبار وتنافس في لوحة الشرف إن اخترت نشر نتيجتك.</dd></div>
@@ -355,6 +356,7 @@
       <p>أدلة الاستخدام</p>
       <ul class="site-footer__links">
         <li><a href="/create-quiz-on-telegram/">دليل إنشاء الاختبار</a></li>
+        <li><a href="/topic-to-quiz/">اختبار من موضوع</a></li>
         <li><a href="/pdf-to-mcq/"><span class="ltr">PDF</span> إلى أسئلة</a></li>
         <li><a href="/word-powerpoint-to-quiz/"><span class="ltr">Word</span> و<span class="ltr">PowerPoint</span></a></li>
         <li><a href="/image-to-quiz/">الصور إلى اختبار</a></li>

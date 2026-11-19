@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generate AI Quizzes from Any Topic on Telegram | Abiad</title>
+<meta name="description" content="Create interactive multiple-choice quizzes directly from any topic prompt (text or short voice message) without uploading a file using Abiad Bot on Telegram.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="/assets/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Abiad - Smart AI Quiz Maker">
+<meta property="og:title" content="Generate AI Quizzes from Any Topic on Telegram | Abiad">
+<meta property="og:description" content="Create interactive multiple-choice quizzes directly from any topic prompt (text or short voice message) without uploading a file using Abiad Bot on Telegram.">
+<meta property="og:image" content="https://abiad.me/assets/og-image-v5.jpg?v=6">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://abiad.me/en/topic-to-quiz/">
+<link rel="alternate" hreflang="ar" href="https://abiad.me/topic-to-quiz/">
+<link rel="alternate" hreflang="en" href="https://abiad.me/en/topic-to-quiz/">
+<link rel="alternate" hreflang="x-default" href="https://abiad.me/en/topic-to-quiz/">
+<script>
+(function() {
+  var pref = localStorage.getItem('abiad_lang');
+  if (pref === 'ar') {
+    location.replace('/topic-to-quiz/');
+  }
+})();
+</script>
+<meta property="og:url" content="https://abiad.me/en/topic-to-quiz/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Abiad Logo - Smart AI Quiz Maker">
+<meta name="twitter:title" content="Generate AI Quizzes from Any Topic on Telegram | Abiad">
+<meta name="twitter:description" content="Create interactive multiple-choice quizzes directly from any topic prompt (text or short voice message) without uploading a file using Abiad Bot on Telegram.">
+<meta name="twitter:image" content="https://abiad.me/assets/og-image-v5.jpg?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://abiad.me/en/topic-to-quiz/#webpage",
+      "url": "https://abiad.me/en/topic-to-quiz/",
+      "name": "Generate AI Quizzes from Any Topic on Telegram | Abiad",
+      "description": "Create interactive multiple-choice quizzes directly from any topic prompt (text or short voice message) without uploading a file using Abiad Bot on Telegram.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://abiad.me/en/#website"
+      },
+      "about": {
+        "@id": "https://abiad.me/en/#app"
+      },
+      "breadcrumb": {
+        "@id": "https://abiad.me/en/topic-to-quiz/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://abiad.me/en/topic-to-quiz/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://abiad.me/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Generate Quizzes from Any Topic",
+          "item": "https://abiad.me/en/topic-to-quiz/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/en/topic-to-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need a PDF or photo to use Topic Quiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Simply type a topic title or short description (3 to 500 characters) or send a short voice message up to 60 seconds, and the bot generates a multiple-choice quiz immediately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I start Topic Quiz inside Abiad Bot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tap the «Topic Quiz» button in the main menu or send the /topic command, then enter your topic as text or a short voice note."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which languages are supported for Topic Quiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The bot detects the language of your topic prompt and generates questions in that language, while the bot interface supports 6 languages (Arabic, English, Turkish, French, German, and Persian)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export a topic-generated quiz to PDF or Word?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Once generated, you can save the quiz to Favorites, share a link, or export it as Word or PDF in Student or Teacher edition."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=14">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <a class="brand" href="/en/"><img class="brand__mark" src="/assets/mark.png?v=2" alt="" width="40" height="40"><span>Abiad</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="/en/#how">How It Works</a>
+      <a href="/en/create-quiz-on-telegram/">User Guide</a>
+      <a href="/en/#audience">Student or Teacher</a>
+      <a href="/en/#points">Credits</a>
+      <a href="/en/#about">About Developer</a>
+    </nav>
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current">English</span>
+        <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="lang-menu" role="menu">
+        <a href="/topic-to-quiz/" class="lang-option" data-lang="ar" role="menuitem">
+          <span class="lang-name">العربية</span>
+          <span class="lang-tag">Original</span>
+        </a>
+        <a href="/en/topic-to-quiz/" class="lang-option is-active" data-lang="en" role="menuitem">
+          <span class="lang-name">English</span>
+          <span class="lang-tag">Global</span>
+        </a>
+        <div class="lang-divider"></div>
+        <div class="lang-more">
+          <span class="lang-more-label">More languages:</span>
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn--pen btn--sm site-header__cta" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Start on Telegram</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<nav class="breadcrumb" aria-label="Breadcrumb navigation">
+  <div class="wrap">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li aria-current="page">Generate Quizzes from Any Topic</li>
+    </ol>
+  </div>
+</nav>
+
+<section class="hero page-hero" id="intro" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 class="hero__title" id="page-title">Generate AI Quizzes from Any Topic on Telegram</h1>
+    <p class="hero__text">You don't always need a PDF or lecture photos to test yourself. With <strong>Topic Quiz</strong> (<span class="ltr">/topic</span>) in Abiad Bot on Telegram, type a topic title or send a short voice note, and the bot generates 4-option multiple-choice questions with hints and explanations.</p>
+    <p class="hero__text">Have a PDF or notes file instead? Check out <a href="/en/pdf-to-mcq/">Convert PDF to Multiple-Choice Questions</a> or the <a href="/en/create-quiz-on-telegram/">Telegram Quiz Creation Guide</a>.</p>
+    <div class="btn-row">
+      <a class="btn btn--pen" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Try Topic Quiz</span></a>
+      <a class="btn btn--line" href="#how-it-works">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="how-it-works" aria-labelledby="how-it-works-title">
+  <div class="wrap">
+    <h2 class="section__title" id="how-it-works-title">How to Create a Quiz from Any Topic</h2>
+    <ol class="flow">
+      <li>
+        <h3>Open Topic Quiz</h3>
+        <p>Tap «🎯 Topic Quiz» in the bot's main menu, or send the <span class="ltr">/topic</span> command directly.</p>
+      </li>
+      <li>
+        <h3>Type Your Topic or Send a Voice Note</h3>
+        <p>Write a concise description (3 to 500 characters) such as «Newton's Laws of Motion — intermediate level», or record a short voice message (up to 60 seconds).</p>
+      </li>
+      <li>
+        <h3>Choose Count &amp; Difficulty</h3>
+        <p>The bot automatically extracts the topic, subject, and language, letting you pick question count, style, and difficulty before confirming credit cost.</p>
+      </li>
+      <li>
+        <h3>Solve, Practice, or Export</h3>
+        <p>Answer interactively inside Telegram, drill your mistakes, or <a href="/en/export-quiz-word-pdf/">export to Word or PDF</a>.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="limits" aria-labelledby="limits-title">
+  <div class="wrap">
+    <h2 class="section__title" id="limits-title">Input Limits &amp; Guidelines</h2>
+    <dl class="uses">
+      <div class="uses__row"><dt>Text Prompt</dt><dd>3 to 500 characters. More specific prompts (e.g., grade level or subtopic) produce more focused questions.</dd></div>
+      <div class="uses__row"><dt>Voice Prompt</dt><dd>Short voice message up to 60 seconds and 2 MB max, with a confirmation screen before generation.</dd></div>
+      <div class="uses__row"><dt>Content Safety</dt><dd>Prompts pass through automated moderation with temporary cooldowns for repeated misuse, per our <a href="/en/terms-of-service.html">Terms of Service</a>.</dd></div>
+      <div class="uses__row"><dt>Saving Important Quizzes</dt><dd>Text-generated quizzes not saved in Favorites expire automatically after inactivity; bookmark important quizzes to keep them permanently.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section section--mist" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <h2 class="section__title" id="faq-title">Frequently Asked Questions About Topic Quiz</h2>
+    <div class="faq">
+      <details>
+        <summary>Do I need a PDF or photo to use Topic Quiz?</summary>
+        <p>No. Simply type a topic title or short description (3 to 500 characters) or send a short voice message up to 60 seconds, and the bot generates a multiple-choice quiz immediately.</p>
+      </details>
+      <details>
+        <summary>How do I start Topic Quiz inside Abiad Bot?</summary>
+        <p>Tap the «Topic Quiz» button in the main menu or send the <span class="ltr">/topic</span> command, then enter your topic as text or a short voice note.</p>
+      </details>
+      <details>
+        <summary>Which languages are supported for Topic Quiz?</summary>
+        <p>The bot detects the language of your topic prompt and generates questions in that language, while the bot interface supports 6 languages (Arabic, English, Turkish, French, German, and Persian).</p>
+      </details>
+      <details>
+        <summary>Can I export a topic-generated quiz to PDF or Word?</summary>
+        <p>Yes. Once generated, you can save the quiz to Favorites, share a link, or export it as Word or PDF in Student or Teacher edition.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="related" aria-labelledby="related-title">
+  <div class="wrap">
+    <h2 class="section__title" id="related-title">Related Guides</h2>
+    <ul class="related">
+      <li><a href="/en/pdf-to-mcq/"><strong>Convert PDF to Multiple-Choice Questions</strong><span>When you already have a lecture PDF or textbook chapter.</span></a></li>
+      <li><a href="/en/math-quiz/"><strong>Math Quizzes with Equations</strong><span>Formulas, tables, and matrices rendered cleanly as images.</span></a></li>
+      <li><a href="/en/export-quiz-word-pdf/"><strong>Export Quizzes to Word or PDF</strong><span>Student edition without solutions or Teacher edition with answer keys.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band" id="cta" aria-labelledby="cta-title">
+  <div class="wrap cta-band__grid">
+    <div>
+      <h2 class="cta-band__title" id="cta-title">Generate a Quiz from Any Topic Now</h2>
+      <p class="cta-band__text">Open Abiad Bot on Telegram, send <span class="ltr">/topic</span>, and type any subject you want to practice.</p>
+      <a class="btn btn--pen" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Start on Telegram</span></a>
+      <div class="cta-band__links">
+        <a href="https://t.me/abiadquizmaker" target="_blank" rel="noopener noreferrer">Updates Channel</a>
+        <a href="https://t.me/AbiadSupportBot" target="_blank" rel="noopener noreferrer">Technical Support</a>
+      </div>
+    </div>
+    <img class="cta-band__logo" src="/assets/logo.jpg?v=3" alt="Abiad Logo - Smart AI Quiz Maker" width="240" height="240" loading="lazy">
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div class="site-footer__id">
+      <img src="/assets/mark.png?v=2" alt="" width="44" height="44" loading="lazy">
+      <div>
+        <p><strong>Abiad - Smart AI Quiz Maker</strong> — All rights reserved © 2026</p>
+        <p class="site-footer__scope">Telegram Bot developed by Mahmoud Abiad.</p>
+      </div>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/terms-of-service.html">Terms of Service</a></li>
+      <li><a href="/en/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="https://t.me/AbiadSupportBot" target="_blank" rel="noopener noreferrer">Technical Support</a></li>
+    </ul>
+  </div>
+</footer>
+<script data-goatcounter="https://abiad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="/assets/script.js?v=14"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Quiz Generator from PDF, Images &amp; Lectures | Abiad</title>
-<meta name="description" content="Generate multiple-choice quizzes with AI from PDFs, images, text, and lectures using Abiad Bot on Telegram. Take tests, review mistakes, and export to PDF or Word.">
+<meta name="description" content="Generate multiple-choice quizzes with AI from PDFs, images, text, topics, and lectures using Abiad Bot on Telegram. Take tests, review mistakes, and export to PDF or Word.">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=2">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Abiad - Smart AI Quiz Maker">
 <meta property="og:title" content="AI Quiz Generator from PDF, Images &amp; Lectures | Abiad">
-<meta property="og:description" content="Generate multiple-choice quizzes with AI from PDFs, images, text, and lectures using Abiad Bot on Telegram. Take tests, review mistakes, and export to PDF or Word.">
+<meta property="og:description" content="Generate multiple-choice quizzes with AI from PDFs, images, text, topics, and lectures using Abiad Bot on Telegram. Take tests, review mistakes, and export to PDF or Word.">
 <meta property="og:image" content="https://abiad.me/assets/og-image-v5.jpg?v=6">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://abiad.me/en/">
@@ -24,7 +24,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Abiad Logo - Smart AI Quiz Maker">
 <meta name="twitter:title" content="AI Quiz Generator from PDF, Images &amp; Lectures | Abiad">
-<meta name="twitter:description" content="Generate multiple-choice quizzes with AI from PDFs, images, text, and lectures using Abiad Bot on Telegram. Take tests, review mistakes, and export to PDF or Word.">
+<meta name="twitter:description" content="Generate multiple-choice quizzes with AI from PDFs, images, text, topics, and lectures using Abiad Bot on Telegram. Take tests, review mistakes, and export to PDF or Word.">
 <meta name="twitter:image" content="https://abiad.me/assets/og-image-v5.jpg?v=6">
 
 <script>
@@ -79,8 +79,14 @@
         "https://t.me/AbiadQuizMakerbot",
         "https://t.me/abiadquizmaker"
       ],
-      "inLanguage": "en",
-      "description": "Generate multiple-choice quizzes with AI from PDFs, images, text, and lectures using Abiad Bot on Telegram. Take tests, review mistakes, and export to PDF or Word.",
+      "inLanguage": ["ar", "en", "tr", "fr", "de", "fa"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free welcome balance and daily free refills, with optional paid credit packages inside the bot."
+      },
+      "description": "Generate multiple-choice quizzes with AI from PDFs, images, text, topics, and lectures using Abiad Bot on Telegram. Take tests, review mistakes, and export to PDF or Word.",
       "featureList": [
         "Convert PDFs, Word, PowerPoint, images, text, and lecture recordings into multiple-choice quizzes",
         "Generate quizzes directly from a written or short voice topic prompt",
@@ -202,7 +208,7 @@
       <li><strong>Word &amp; PowerPoint</strong><span>Text from .docx, .pptx, and .txt files. <a href="/en/word-powerpoint-to-quiz/">Docs guide</a></span></li>
       <li><strong>Photos &amp; Albums</strong><span>Book pages or notes as single photos or albums. <a href="/en/image-to-quiz/">Photos guide</a></span></li>
       <li><strong>Audio Lectures</strong><span>Transcribe, summarize, or generate quizzes. <a href="/en/lecture-transcription/">Audio guide</a></span></li>
-      <li><strong>Topic or Existing Exam</strong><span>Enter a topic directly or <a href="/en/exam-to-quiz/">convert ready exams</a> into interactive tests.</span></li>
+      <li><strong>Topic or Existing Exam</strong><span><a href="/en/topic-to-quiz/">Generate from any topic</a> or <a href="/en/exam-to-quiz/">convert ready exams</a>.</span></li>
       <li><strong>Math &amp; Languages</strong><span><a href="/en/math-quiz/">Rendered math formulas</a> and <a href="/en/english-french-quiz/">English/French quizzes</a>.</span></li>
     </ul>
   </div>
@@ -266,7 +272,7 @@
 
       <div class="tabs__panel" role="tabpanel" id="panel-student" aria-labelledby="tab-student" tabindex="0">
         <dl class="uses">
-          <div class="uses__row"><dt>Active Recall Over Rereading</dt><dd>Upload lecture slides or photos, or use Topic Quiz for instant revision questions.</dd></div>
+          <div class="uses__row"><dt>Active Recall Over Rereading</dt><dd>Upload lecture slides or photos, or use <a href="/en/topic-to-quiz/">Topic Quiz</a> for instant revision questions.</dd></div>
           <div class="uses__row"><dt>Transcribe Lecture Audio</dt><dd>Upload long recordings via our in-app web uploader to <a href="/en/lecture-transcription/">transcribe, summarize</a>, or quiz yourself.</dd></div>
           <div class="uses__row"><dt>Organize &amp; Master Mistakes</dt><dd>Save quizzes into subject folders and drill only the questions you got wrong.</dd></div>
           <div class="uses__row"><dt>Study with Classmates</dt><dd>Share quiz links and compare scores on optional leaderboards.</dd></div>
@@ -351,6 +357,7 @@
       <p>User Guides</p>
       <ul class="site-footer__links">
         <li><a href="/en/create-quiz-on-telegram/">Quiz Creation Guide</a></li>
+        <li><a href="/en/topic-to-quiz/">Topic Quiz</a></li>
         <li><a href="/en/pdf-to-mcq/"><span class="ltr">PDF</span> to Questions</a></li>
         <li><a href="/en/word-powerpoint-to-quiz/"><span class="ltr">Word</span> &amp; <span class="ltr">PowerPoint</span> to Quiz</a></li>
         <li><a href="/en/image-to-quiz/">Images to Quiz</a></li>
