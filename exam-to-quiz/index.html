@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/exam-to-quiz/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/exam-to-quiz/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "تحويل اختبار جاهز إلى اختبار",
           "item": "https://abiad.me/exam-to-quiz/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/exam-to-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما الفرق بين استخراج الاختبار وأن يحلّه الذكاء الاصطناعي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "في الاستخراج تبقى إجابات الاختبار الأصلية هي إجابات الاختبار. وفي الخيار الآخر يضع الذكاء الاصطناعي الإجابات بنفسه."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أثق بالإجابات التي يضعها الذكاء الاصطناعي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا تعتمد عليها دون مراجعة. قد تكون خاطئة، والأفضل مقارنتها بإجابات المعلم أو الكتاب."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ما الاختبارات التي تناسب هذه الميزة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الاختبارات التي أسئلتها اختيار من متعدد، وتصل إلى البوت ملف PDF أو صورة أو نصاً. وللاختبارات المقالية أو أسئلة الصح والخطأ لا نَعِد بدعم."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أستعمله لحلّ امتحان أنا فيه الآن؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. شروط الاستخدام تمنع استخدام البوت في الامتحانات الحيّة أو للغش الأكاديمي. وهذه الصفحة للتدريب على اختبارات سابقة وأوراق المراجعة."
+          }
         }
       ]
     }

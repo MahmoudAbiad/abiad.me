@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/math-quiz/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/math-quiz/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "أسئلة الرياضيات بمعادلات",
           "item": "https://abiad.me/math-quiz/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/math-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "لماذا تظهر معادلات السؤال صورة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لأن البوت يعرض السؤال الرياضي، بما فيه من معادلات وجداول ومصفوفات، صورةً داخل المحادثة، ثم تأتي الخيارات أحرفاً في استفتاء تيليجرام."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ما أنواع أسئلة الرياضيات التي أستطيع اختيارها؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ثلاثة: مسائل، وقواعد، ونظرية. وتستطيع أيضاً اختيار «متنوع» أو كتابة «تفضيل خاص»."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أصحّح سؤال رياضيات فيه خطأ؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "يمكن لصاحب الاختبار أو أحد المشرفين الردّ بنقطة (.) على استفتاء السؤال لتعديله، ولأسئلة الرياضيات محرّر على الويب."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يعرض البوت خطوات حلّ المسألة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا نَعِد بذلك. ما نؤكده هو التلميح عبر زر «طلب تلميح ذكي» وشرح للإجابة بعد الاختيار."
+          }
         }
       ]
     }
@@ -181,7 +214,10 @@
     </div>
     <figure class="bot-shot">
       <a class="bot-shot__image" href="/assets/screenshots/physics-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="تكبير لقطة سؤال الفيزياء على الهاتف (تفتح في تبويب جديد)">
-        <img src="/assets/screenshots/physics-mobile.jpg" alt="سؤال فيزياء عن ثابت صلابة نابض، يظهر كصورة تحتوي المعادلات والوحدات، وتحته استفتاء بأحرف الإجابات وزر طلب تلميح." width="1080" height="2340" loading="lazy" decoding="async">
+                <picture>
+          <source srcset="/assets/screenshots/physics-mobile.webp" type="image/webp">
+          <img src="/assets/screenshots/physics-mobile.jpg" alt="سؤال فيزياء عن ثابت صلابة نابض، يظهر كصورة تحتوي المعادلات والوحدات، وتحته استفتاء بأحرف الإجابات وزر طلب تلميح." width="1080" height="2340" loading="lazy" decoding="async">
+        </picture>
       </a>
       <figcaption><h3>سؤال بمعادلات ووحدات واضحة</h3><p>لقطة من تطبيق الهاتف توضّح صورة السؤال وخيارات الإجابة.</p><span class="bot-shot__zoom">اضغط على الصورة لتكبيرها</span></figcaption>
     </figure>

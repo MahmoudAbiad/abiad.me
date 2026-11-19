@@ -74,6 +74,44 @@
           "item": "https://abiad.me/en/math-quiz/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/en/math-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do math questions appear as images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because Telegram polls do not support LaTeX, fractions, square roots, or matrix typography. Rendering equations into high-clarity images ensures formulas look sharp and readable on all devices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What question styles can I select for mathematics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can choose from: Problems from content, New problems following the same pattern, Formulas & laws, and Subject theory. You can also specify custom prompts up to 150 characters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I correct an equation error in a question?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The quiz creator or a group admin can reply with a dot (.) to the poll to edit it, or use the specialized web editor link provided for math questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the bot show full step-by-step solution derivations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We do not guarantee full multi-page mathematical derivations. What we provide is an on-demand «Smart Hint» during solving and a clear explanatory breakdown after selecting an answer."
+          }
+        }
+      ]
     }
   ]
 }
@@ -178,7 +216,10 @@
     </div>
     <figure class="bot-shot">
       <a class="bot-shot__image" href="/assets/screenshots/physics-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge screenshot: Physics question on mobile (opens in new tab)">
-        <img src="/assets/screenshots/physics-mobile.jpg" alt="Physics question regarding spring stiffness constant displayed as an image with equations and units, with an answer poll and smart hint button below." width="1080" height="2340" loading="lazy" decoding="async">
+                <picture>
+          <source srcset="/assets/screenshots/physics-mobile.webp" type="image/webp">
+          <img src="/assets/screenshots/physics-mobile.jpg" alt="Physics question regarding spring stiffness constant displayed as an image with equations and units, with an answer poll and smart hint button below." width="1080" height="2340" loading="lazy" decoding="async">
+        </picture>
       </a>
       <figcaption><h3>Question with High-Clarity Formulas & Units</h3><p>Mobile screenshot showing image-rendered math question with answer poll.</p><span class="bot-shot__zoom">Click image to enlarge</span></figcaption>
     </figure>

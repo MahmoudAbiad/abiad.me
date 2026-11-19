@@ -74,6 +74,44 @@
           "item": "https://abiad.me/en/create-quiz-on-telegram/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/en/create-quiz-on-telegram/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the service free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You start with a complimentary welcome balance and receive periodic refills, but generating quizzes consumes credits—usage is not unlimited. You can acquire additional credits by inviting friends or redeeming gift codes. Check the bot's credit store or contact @Abiadd for top-up options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many questions can I request in a single quiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From 1 up to 120 questions per quiz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I edit a question after generating a quiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The quiz creator or a group administrator can reply with a period (.) to any question poll to modify its question text and answer options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I share the quiz with classmates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, through a shareable link that any Telegram user can open. Opening and taking a shared quiz does not deduct credits from the recipient."
+          }
+        }
+      ]
     }
   ]
 }
@@ -224,7 +262,10 @@
     </div>
     <figure class="bot-shot">
       <a class="bot-shot__image" href="/assets/screenshots/result-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge screenshot: Review mistakes and practice (opens in new tab)">
-        <img src="/assets/screenshots/result-mobile.jpg" alt="Mobile quiz results screen showing review mistakes and practice buttons." width="1080" height="2340" loading="lazy" decoding="async">
+                <picture>
+          <source srcset="/assets/screenshots/result-mobile.webp" type="image/webp">
+          <img src="/assets/screenshots/result-mobile.jpg" alt="Mobile quiz results screen showing review mistakes and practice buttons." width="1080" height="2340" loading="lazy" decoding="async">
+        </picture>
       </a>
       <figcaption><h3>Review & Practice Your Mistakes</h3><p>After your attempt, open mistake review or start a focused practice round on questions you missed.</p><span class="bot-shot__zoom">Click image to enlarge</span></figcaption>
     </figure>

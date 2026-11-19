@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/english-french-quiz/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/english-french-quiz/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "اختبار إنجليزي أو فرنسي",
           "item": "https://abiad.me/english-french-quiz/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/english-french-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما اللغات المتاحة في اختبارات اللغة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الإنجليزية والفرنسية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ما أنواع الأسئلة التي أختارها؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "قواعد، أو قراءة، أو اختبار عام."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أستطيع أن تظهر الأسئلة بالعربية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، تختار بين أن تظهر الأسئلة مترجمة إلى العربية أو بلغتها الأصلية فقط."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يختبر البوت نطقي أو محادثتي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا نَعِد بذلك. ما نؤكده هو أسئلة اختيار من متعدد في القواعد والقراءة والاختبار العام."
+          }
         }
       ]
     }

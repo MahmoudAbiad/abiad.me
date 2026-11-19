@@ -74,6 +74,44 @@
           "item": "https://abiad.me/en/pdf-to-mcq/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/en/pdf-to-mcq/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the allowed PDF file size and page count limits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When sending files directly within Telegram: up to 20 MB and 100 pages. Via the web upload page: up to 100 MB and 150 pages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can other users view or access my uploaded PDF file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your original file is completely private and never accessible to other users. However, the quiz generated from it may be indexed centrally so that if another user uploads the exact same file, the bot can offer the existing quiz at a discount."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I generate another, different quiz from the same PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can request a fresh quiz from the same file at any time, and the bot avoids repeating questions it previously generated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my credits if quiz generation fails?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Credits are deducted prior to generation and are automatically refunded to your account if the request fails."
+          }
+        }
+      ]
     }
   ]
 }

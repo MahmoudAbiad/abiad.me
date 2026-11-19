@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/word-powerpoint-to-quiz/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/word-powerpoint-to-quiz/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "إنشاء اختبار من Word أو PowerPoint",
           "item": "https://abiad.me/word-powerpoint-to-quiz/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/word-powerpoint-to-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "هل يقرأ البوت الجداول داخل ملف Word؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، يقرأ البوت نص الجداول إلى جانب نص الفقرات في ملفات docx."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يقرأ البوت الصور الموجودة في الشرائح أو داخل ملف Word؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا، الصور المضمَّنة في ملفات Word وشرائح PowerPoint لا تُقرأ في هذا المسار. وفي ملفات pptx يُقرأ النص الموجود في مربعات النص فقط."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ماذا أفعل بملف PowerPoint قديم بصيغة ppt؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "افتحه في PowerPoint واحفظه من جديد بصيغة pptx ثم أرسل النسخة الجديدة. وكذلك ملفات doc القديمة: احفظها بصيغة docx قبل الإرسال."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أستطيع إرسال ملف txt بدل Word؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، يقبل البوت الملفات النصية txt. وإذا كانت مادتك قصيرة فيمكنك لصقها نصاً مباشراً في المحادثة، بشرط أن يتراوح طولها بين 30 و8,000 حرف."
+          }
         }
       ]
     }

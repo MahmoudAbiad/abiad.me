@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/create-quiz-on-telegram/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/create-quiz-on-telegram/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "كيف تنشئ اختباراً على تيليجرام",
           "item": "https://abiad.me/create-quiz-on-telegram/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/create-quiz-on-telegram/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "هل الخدمة مجانية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "تبدأ برصيد ترحيبي مجاني، ويتجدد رصيدك دورياً، لكن توليد الاختبارات يستهلك نقاطاً، فالاستخدام ليس مفتوحاً بلا حدود. ويمكن زيادة الرصيد بدعوة الأصدقاء أو بأكواد الهدايا، ومراجعة خيارات الشحن داخل البوت أو بالتواصل مع @Abiadd لشراء رصيد إضافي."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم سؤالاً يمكنني طلبه في الاختبار الواحد؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "من سؤال واحد إلى 120 سؤالاً."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أستطيع تعديل سؤال في الاختبار؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، لصاحب الاختبار أو لأحد المشرفين أن يردّ بنقطة (.) على استفتاء السؤال لتعديل نصّه وإجاباته."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أستطيع مشاركة الاختبار مع زملائي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، عبر رابط مشاركة يفتحه أي مستخدم على تيليجرام، وفتح اختبار مشارَك لا يخصم نقاطاً من فاتحه."
+          }
         }
       ]
     }
@@ -227,7 +260,10 @@
     </div>
         <figure class="bot-shot">
       <a class="bot-shot__image" href="/assets/screenshots/result-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="تكبير لقطة: راجع أخطاءك وتدرّب عليها (تفتح في تبويب جديد)">
-        <img src="/assets/screenshots/result-mobile.jpg" alt="نتيجة محاولة متوقفة في تطبيق الهاتف، مع زري مراجعة الأخطاء والتدرّب عليها." width="1080" height="2340" loading="lazy" decoding="async">
+                <picture>
+          <source srcset="/assets/screenshots/result-mobile.webp" type="image/webp">
+          <img src="/assets/screenshots/result-mobile.jpg" alt="نتيجة محاولة متوقفة في تطبيق الهاتف، مع زري مراجعة الأخطاء والتدرّب عليها." width="1080" height="2340" loading="lazy" decoding="async">
+        </picture>
       </a>
       <figcaption><h3>راجع أخطاءك وتدرّب عليها</h3><p>بعد المحاولة، افتح مراجعة الأخطاء أو ابدأ جولة تدريب على الأسئلة التي أخطأت فيها.</p><span class="bot-shot__zoom">اضغط على الصورة لتكبيرها</span></figcaption>
     </figure>
