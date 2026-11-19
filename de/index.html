@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Quiz-Generator aus PDF, Bildern &amp; Vorlesungen | Abiad</title>
+<meta name="description" content="Erstelle mit dem Abiad Telegram-Bot KI-Multiple-Choice-Quizze aus PDFs, Fotos, Audio-Vorlesungen oder einem freien Thema. Fehler gezielt üben und als PDF/Word exportieren.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="/assets/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Abiad - Smarter KI-Quiz-Generator">
+<meta property="og:title" content="KI-Quiz-Generator aus PDF, Bildern &amp; Vorlesungen | Abiad">
+<meta property="og:description" content="Erstelle Multiple-Choice-Quizze auf Telegram aus PDFs, Fotos, Audio oder Themen und exportiere sie als PDF oder Word.">
+<meta property="og:image" content="https://abiad.me/assets/og-image-v5.jpg?v=6">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://abiad.me/de/">
+<link rel="alternate" hreflang="ar" href="https://abiad.me/">
+<link rel="alternate" hreflang="en" href="https://abiad.me/en/">
+<link rel="alternate" hreflang="tr" href="https://abiad.me/tr/">
+<link rel="alternate" hreflang="fr" href="https://abiad.me/fr/">
+<link rel="alternate" hreflang="de" href="https://abiad.me/de/">
+<link rel="alternate" hreflang="fa" href="https://abiad.me/fa/">
+<link rel="alternate" hreflang="x-default" href="https://abiad.me/en/">
+<meta property="og:url" content="https://abiad.me/de/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Abiad Logo">
+<script>
+(function() {
+  var pref = localStorage.getItem('abiad_lang');
+  var map = { ar: '/', en: '/en/', tr: '/tr/', fr: '/fr/', fa: '/fa/' };
+  if (pref && map[pref]) location.replace(map[pref]);
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://abiad.me/de/#website",
+      "url": "https://abiad.me/de/",
+      "name": "Abiad - Smarter KI-Quiz-Generator",
+      "inLanguage": "de",
+      "publisher": { "@id": "https://abiad.me/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://abiad.me/#person",
+      "name": "Mahmoud Abiad",
+      "url": "https://abiad.me/",
+      "image": "https://abiad.me/MahmoudAbiad.jpeg",
+      "sameAs": ["https://t.me/Abiadd"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://abiad.me/de/#app",
+      "name": "Abiad - Smarter KI-Quiz-Generator",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Telegram",
+      "url": "https://abiad.me/de/",
+      "installUrl": "https://t.me/AbiadQuizMakerbot",
+      "inLanguage": ["ar", "en", "tr", "fr", "de", "fa"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "KI-Telegram-Bot zum Erstellen interaktiver Quizze aus PDFs, Bildern, Audio-Vorlesungen und Themen mit PDF/Word-Export.",
+      "image": "https://abiad.me/assets/og-image-v5.jpg?v=6",
+      "author": { "@id": "https://abiad.me/#person" }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=14">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <a class="brand" href="/de/"><img class="brand__mark" src="/assets/mark.png?v=2" alt="" width="40" height="40"><span>Abiad</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menü</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+      <a href="/de/#how">So funktioniert’s</a>
+      <a href="/de/#inside-bot">Einblick</a>
+      <a href="/de/#audience">Lernende / Lehrende</a>
+      <a href="/de/#points">Punkte</a>
+      <a href="/en/create-quiz-on-telegram/">Anleitung</a>
+    </nav>
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Sprache ändern">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current">Deutsch</span>
+        <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="lang-menu" role="menu">
+        <a href="/" class="lang-option" data-lang="ar" role="menuitem"><span class="lang-name">العربية</span><span class="lang-tag">AR</span></a>
+        <a href="/en/" class="lang-option" data-lang="en" role="menuitem"><span class="lang-name">English</span><span class="lang-tag">EN</span></a>
+        <a href="/tr/" class="lang-option" data-lang="tr" role="menuitem"><span class="lang-name">Türkçe</span><span class="lang-tag">TR</span></a>
+        <a href="/fr/" class="lang-option" data-lang="fr" role="menuitem"><span class="lang-name">Français</span><span class="lang-tag">FR</span></a>
+        <a href="/de/" class="lang-option is-active" data-lang="de" role="menuitem"><span class="lang-name">Deutsch</span><span class="lang-tag">DE</span></a>
+        <a href="/fa/" class="lang-option" data-lang="fa" role="menuitem"><span class="lang-name">فارسی</span><span class="lang-tag">FA</span></a>
+      </div>
+    </div>
+    <a class="btn btn--pen btn--sm site-header__cta" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Auf Telegram starten</span></a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <h1 class="hero__title">Erstelle KI-Quizze aus deinem Lernmaterial</h1>
+      <p class="hero__text">Sende eine PDF, Fotos, eine Audio-Vorlesung oder einfach ein Thema an «Abiad» auf Telegram. Der Bot erstellt Multiple-Choice-Quizze mit Hinweisen, Erklärungen, Fehlertraining und PDF/Word-Export.</p>
+      <div class="btn-row">
+        <a class="btn btn--pen" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Auf Telegram starten</span></a>
+        <a class="btn btn--line" href="#how">So funktioniert’s</a>
+      </div>
+      <p class="hero__hint">Kostenloses Startguthaben &amp; tägliche Gratis-Punkte. Kosten werden vorab angezeigt. In 6 Sprachen direkt in Telegram.</p>
+    </div>
+
+    <div class="sheet" id="demo-i18n">
+      <div class="sheet__head">
+        <span class="sheet__subject" id="q-subject">Biologie</span>
+        <span id="q-count">Frage 1 von 3</span>
+      </div>
+      <p class="sheet__q" id="q-text">Welches Organell ist für die Energieproduktion in der Zelle zuständig?</p>
+      <div class="opts" id="q-opts" role="group" aria-label="Antwortmöglichkeiten"></div>
+      <div class="sheet__feedback" id="q-feedback" aria-live="polite"></div>
+      <div class="sheet__foot">
+        <button type="button" class="btn btn--quiet" id="q-next">Nächste Frage</button>
+        <span>Interaktive Quiz-Vorschau</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <h2 class="section__title" id="how-title">So funktioniert’s &amp; unterstützte Inhalte</h2>
+    <p class="section__lede">Drei einfache Schritte direkt im Telegram-Chat.</p>
+    <ol class="steps">
+      <li class="step"><span class="step__num" aria-hidden="true">1</span><h3 class="step__title">Material oder Thema senden</h3><p class="step__text">PDF, Fotos, Text, Audio-Aufnahme oder direkt ein Thema über <span class="ltr">/topic</span>.</p></li>
+      <li class="step"><span class="step__num" aria-hidden="true">2</span><h3 class="step__title">Quiz anpassen</h3><p class="step__text">Fragenanzahl, Schwierigkeitsgrad und Stil wählen (Mathe, Sprachen, Naturwissenschaften).</p></li>
+      <li class="step"><span class="step__num" aria-hidden="true">3</span><h3 class="step__title">Lösen, üben &amp; exportieren</h3><p class="step__text">Im Chat lösen, Fehler gezielt wiederholen, teilen oder als PDF/Word exportieren.</p></li>
+    </ol>
+    <ul class="inputs" id="inputs" style="margin-top:36px">
+      <li><strong>PDF-Dokumente</strong><span>Skripte, Lehrbücher und Zusammenfassungen. <a href="/en/pdf-to-mcq/">PDF-Guide</a></span></li>
+      <li><strong>Word &amp; PowerPoint</strong><span>Textverarbeitung aus .docx-, .pptx- und .txt-Dateien.</span></li>
+      <li><strong>Fotos &amp; Alben</strong><span>Buchseiten oder Lernzettel einzeln oder als Album.</span></li>
+      <li><strong>Audio-Vorlesungen</strong><span>Transkribieren, zusammenfassen und in Quizze umwandeln.</span></li>
+      <li><strong>Themen-Quiz (/topic)</strong><span>Ohne Datei einfach Thema eintippen oder kurz einsprechen.</span></li>
+      <li><strong>Mathe &amp; Formeln</strong><span>Gleichungen, Tabellen und Matrizen als gestochen scharfe Bilder.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section bot-gallery" id="inside-bot" aria-labelledby="inside-bot-title">
+  <div class="wrap">
+    <p class="bot-gallery__eyebrow">Im Bot</p>
+    <h2 class="section__title" id="inside-bot-title">Lösen, Wiederholen und Spielen in Telegram</h2>
+    <p class="section__lede">Echte mobile Screenshots: von interaktiven Fragen über Fehlertraining bis zum Lernspiel «Abiad Journey».</p>
+    <div class="bot-gallery__grid">
+      <figure class="bot-shot">
+        <a class="bot-shot__image" href="/assets/screenshots/question-mobile.jpg" target="_blank" rel="noopener noreferrer">
+          <picture><source srcset="/assets/screenshots/question-mobile.webp" type="image/webp"><img src="/assets/screenshots/question-mobile.jpg" alt="Quizfrage in Telegram" width="1080" height="1764" loading="lazy" decoding="async"></picture>
+        </a>
+        <figcaption><h3>Direkt im Chat lösen</h3><p>4 Antwortmöglichkeiten, smarte Hinweise und Favoriten mit einem Tipp.</p></figcaption>
+      </figure>
+      <figure class="bot-shot">
+        <a class="bot-shot__image" href="/assets/screenshots/result-mobile.jpg" target="_blank" rel="noopener noreferrer">
+          <picture><source srcset="/assets/screenshots/result-mobile.webp" type="image/webp"><img src="/assets/screenshots/result-mobile.jpg" alt="Ergebnis und Fehlertraining" width="1080" height="2340" loading="lazy" decoding="async"></picture>
+        </a>
+        <figcaption><h3>Fehler gezielt üben</h3><p>Sofortige Auswertung und kostenlose Übungsrunde nur für falsche Antworten.</p></figcaption>
+      </figure>
+      <figure class="bot-shot" id="abiad-journey">
+        <a class="bot-shot__image" href="/assets/screenshots/journey-driving.jpg" target="_blank" rel="noopener noreferrer">
+          <picture><source srcset="/assets/screenshots/journey-driving.webp" type="image/webp"><img src="/assets/screenshots/journey-driving.jpg" alt="Abiad Journey Lernspiel" width="1080" height="2340" loading="lazy" decoding="async"></picture>
+        </a>
+        <figcaption><h3>«Abiad Journey» Spiel</h3><p>Verwandle dein eigenes Quiz in ein interaktives Telegram-Runner-Spiel.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="stats" id="stats" aria-labelledby="stats-title" data-stats data-stats-url="https://bot.abiad.me/api/public-stats">
+  <div class="wrap">
+    <h2 class="stats__title" id="stats-title">Abiad in Zahlen</h2>
+    <div class="stats__grid">
+      <div class="stats__item"><p class="stats__num"><bdi dir="ltr" data-stat="students" data-value="646">646</bdi></p><p class="stats__label">Registrierte Konten</p></div>
+      <div class="stats__item"><p class="stats__num"><bdi dir="ltr" data-stat="questions" data-value="16775">16,775</bdi></p><p class="stats__label">Erstellte Fragen</p></div>
+    </div>
+    <p class="stats__note">Live-Statistiken werden beim Laden direkt vom Bot abgerufen.</p>
+  </div>
+</section>
+
+<section class="section" id="audience" aria-labelledby="audience-title">
+  <div class="wrap">
+    <h2 class="section__title" id="audience-title">Lernende oder Lehrende</h2>
+    <p class="section__lede">Ein Konto für beide Rollen.</p>
+    <div data-tabs>
+      <div class="tabs__list" role="tablist" aria-label="Rolle wählen">
+        <button class="tabs__tab" role="tab" id="tab-student" aria-selected="true" aria-controls="panel-student" type="button">Ich lerne</button>
+        <button class="tabs__tab" role="tab" id="tab-teacher" aria-selected="false" aria-controls="panel-teacher" tabindex="-1" type="button">Ich unterrichte</button>
+      </div>
+      <div class="tabs__panel" role="tabpanel" id="panel-student" aria-labelledby="tab-student" tabindex="0">
+        <dl class="uses">
+          <div class="uses__row"><dt>Aktives Lernen</dt><dd>Skripte hochladen oder mit Themen-Quiz (/topic) sofort testen.</dd></div>
+          <div class="uses__row"><dt>Vorlesungen transkribieren</dt><dd>Lange Audioaufnahmen hochladen, zusammenfassen und abfragen lassen.</dd></div>
+          <div class="uses__row"><dt>Fehler meistern</dt><dd>Quizze in Ordnern speichern und nur verpasste Fragen wiederholen.</dd></div>
+        </dl>
+      </div>
+      <div class="tabs__panel" role="tabpanel" id="panel-teacher" aria-labelledby="tab-teacher" tabindex="0" hidden>
+        <dl class="uses">
+          <div class="uses__row"><dt>Tests in Minuten erstellen</dt><dd>Unterrichtsmaterial hochladen und Umfang sowie Schwierigkeit festlegen.</dd></div>
+          <div class="uses__row"><dt>Live-Gruppenquizze</dt><dd>Gruppenquizze mit Timer, Urkunden und Siegerehrung starten.</dd></div>
+          <div class="uses__row"><dt>Druckfertiger Word- &amp; PDF-Export</dt><dd>Schülerversion ohne Lösungen oder Lehrerversion mit Lösungsschlüssel.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="points" aria-labelledby="points-title">
+  <div class="wrap split">
+    <div>
+      <h2 id="points-title">Punkte &amp; Nutzung</h2>
+      <p>Starte mit kostenlosem Willkommensguthaben und täglichen Gratis-Punkten sowie Kanal-Bonus, Empfehlungen und Geschenkcodes.</p>
+      <p>Aufladung direkt im Bot oder über <a href="https://t.me/Abiadd" target="_blank" rel="noopener noreferrer">@Abiadd</a>. Punkte sind kein Geldguthaben.</p>
+    </div>
+    <div>
+      <h2>Vor dem Start</h2>
+      <p>KI-generierte Fragen können gelegentlich Fehler enthalten – prüfe wichtige Antworten stets selbst.</p>
+      <p class="notice">Abiad dient der eigenen Lernvorbereitung. Die Nutzung zum Schummeln bei Live-Prüfungen ist untersagt.</p>
+      <p style="margin-top:16px"><a href="/en/terms-of-service.html">Nutzungsbedingungen</a> · <a href="/en/privacy-policy.html">Datenschutz</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="wrap cta-band__grid">
+    <div>
+      <h2 class="cta-band__title" id="cta-title">Starte jetzt dein erstes Quiz</h2>
+      <p class="cta-band__text">Öffne Abiad Bot in Telegram, sende dein Material oder Thema und erhalte dein Quiz in Sekunden.</p>
+      <a class="btn btn--pen" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><span>Auf Telegram starten</span></a>
+      <div class="cta-band__links">
+        <a href="https://t.me/abiadquizmaker" target="_blank" rel="noopener noreferrer">Update-Kanal</a>
+        <a href="https://t.me/AbiadSupportBot" target="_blank" rel="noopener noreferrer">Technischer Support</a>
+      </div>
+    </div>
+    <img class="cta-band__logo" src="/assets/logo.jpg?v=3" alt="Abiad Logo" width="240" height="240" loading="lazy">
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div class="site-footer__id">
+      <img src="/assets/mark.png?v=2" alt="" width="44" height="44" loading="lazy">
+      <div>
+        <p><strong>Abiad - Smarter KI-Quiz-Generator</strong> — Alle Rechte vorbehalten © 2026</p>
+        <p class="site-footer__scope">Telegram-Bot entwickelt von Mahmoud Abiad.</p>
+      </div>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="/de/">Startseite</a></li>
+      <li><a href="/en/terms-of-service.html">Nutzungsbedingungen</a></li>
+      <li><a href="/en/privacy-policy.html">Datenschutz</a></li>
+      <li><a href="https://t.me/AbiadSupportBot" target="_blank" rel="noopener noreferrer">Support</a></li>
+    </ul>
+  </div>
+</footer>
+<script data-goatcounter="https://abiad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="/assets/script.js?v=14"></script>
+<script src="/assets/demo-i18n.js?v=1"></script>
+</body>
+</html>

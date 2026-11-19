@@ -18,6 +18,10 @@
 <link rel="canonical" href="https://abiad.me/en/">
 <link rel="alternate" hreflang="ar" href="https://abiad.me/">
 <link rel="alternate" hreflang="en" href="https://abiad.me/en/">
+<link rel="alternate" hreflang="tr" href="https://abiad.me/tr/">
+<link rel="alternate" hreflang="fr" href="https://abiad.me/fr/">
+<link rel="alternate" hreflang="de" href="https://abiad.me/de/">
+<link rel="alternate" hreflang="fa" href="https://abiad.me/fa/">
 <link rel="alternate" hreflang="x-default" href="https://abiad.me/en/">
 <meta property="og:url" content="https://abiad.me/en/">
 <meta property="og:image:width" content="1200">
@@ -30,9 +34,8 @@
 <script>
 (function() {
   var pref = localStorage.getItem('abiad_lang');
-  if (pref === 'ar') {
-    location.replace('/');
-  }
+  var map = { ar: '/', tr: '/tr/', fr: '/fr/', de: '/de/', fa: '/fa/' };
+  if (pref && map[pref]) location.replace(map[pref]);
 })();
 </script>
 
@@ -127,19 +130,12 @@
         <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="lang-menu" role="menu">
-        <a href="/" class="lang-option" data-lang="ar" role="menuitem">
-          <span class="lang-name">العربية</span>
-          <span class="lang-tag">Original</span>
-        </a>
-        <a href="/en/" class="lang-option is-active" data-lang="en" role="menuitem">
-          <span class="lang-name">English</span>
-          <span class="lang-tag">Global</span>
-        </a>
-        <div class="lang-divider"></div>
-        <div class="lang-more">
-          <span class="lang-more-label">More languages:</span>
-          <div id="google_translate_element"></div>
-        </div>
+        <a href="/" class="lang-option" data-lang="ar" role="menuitem"><span class="lang-name">العربية</span><span class="lang-tag">AR</span></a>
+        <a href="/en/" class="lang-option is-active" data-lang="en" role="menuitem"><span class="lang-name">English</span><span class="lang-tag">EN</span></a>
+        <a href="/tr/" class="lang-option" data-lang="tr" role="menuitem"><span class="lang-name">Türkçe</span><span class="lang-tag">TR</span></a>
+        <a href="/fr/" class="lang-option" data-lang="fr" role="menuitem"><span class="lang-name">Français</span><span class="lang-tag">FR</span></a>
+        <a href="/de/" class="lang-option" data-lang="de" role="menuitem"><span class="lang-name">Deutsch</span><span class="lang-tag">DE</span></a>
+        <a href="/fa/" class="lang-option" data-lang="fa" role="menuitem"><span class="lang-name">فارسی</span><span class="lang-tag">FA</span></a>
       </div>
     </div>
     <a class="btn btn--pen btn--sm site-header__cta" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Start on Telegram</span></a>
@@ -222,7 +218,7 @@
     <div class="bot-gallery__grid">
       <figure class="bot-shot">
         <a class="bot-shot__image" href="/assets/screenshots/question-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge screenshot: Solving a question in chat">
-                    <picture>
+          <picture>
             <source srcset="/assets/screenshots/question-mobile.webp" type="image/webp">
             <img src="/assets/screenshots/question-mobile.jpg" alt="Biology question in Telegram app on mobile with options and hint button." width="1080" height="1764" loading="lazy" decoding="async">
           </picture>
@@ -231,7 +227,7 @@
       </figure>
       <figure class="bot-shot">
         <a class="bot-shot__image" href="/assets/screenshots/result-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge screenshot: Review mistakes and practice">
-                    <picture>
+          <picture>
             <source srcset="/assets/screenshots/result-mobile.webp" type="image/webp">
             <img src="/assets/screenshots/result-mobile.jpg" alt="Quiz results screen with mistake review and practice buttons." width="1080" height="2340" loading="lazy" decoding="async">
           </picture>
@@ -240,7 +236,7 @@
       </figure>
       <figure class="bot-shot" id="abiad-journey">
         <a class="bot-shot__image" href="/assets/screenshots/journey-driving.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge screenshot: Abiad Journey educational game">
-                    <picture>
+          <picture>
             <source srcset="/assets/screenshots/journey-driving.webp" type="image/webp">
             <img src="/assets/screenshots/journey-driving.jpg" alt="Abiad Journey mobile screenshot: 3-lane car runner game with coins and question barriers." width="1080" height="2340" loading="lazy" decoding="async">
           </picture>

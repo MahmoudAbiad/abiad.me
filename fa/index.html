@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ساخت آزمون هوشمند با هوش مصنوعی از PDF، عکس و جزوه در تلگرام | ابیض</title>
+<meta name="description" content="با ربات تلگرام ابیض از فایل PDF، عکس جزوه، ویس کلاس یا حتی عنوان یک موضوع، آزمون چهارگزینه‌ای هوشمند بسازید، خطاهای خود را مرور کنید و خروجی PDF یا Word بگیرید.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="/assets/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:site_name" content="ابیض - آزمون‌ساز هوشمند">
+<meta property="og:title" content="ساخت آزمون هوشمند با هوش مصنوعی از PDF، عکس و جزوه در تلگرام | ابیض">
+<meta property="og:description" content="با ربات ابیض در تلگرام از PDF، عکس، صوت یا هر موضوع دلخواه آزمون چهارگزینه‌ای بسازید و خروجی PDF یا Word بگیرید.">
+<meta property="og:image" content="https://abiad.me/assets/og-image-v5.jpg?v=6">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://abiad.me/fa/">
+<link rel="alternate" hreflang="ar" href="https://abiad.me/">
+<link rel="alternate" hreflang="en" href="https://abiad.me/en/">
+<link rel="alternate" hreflang="tr" href="https://abiad.me/tr/">
+<link rel="alternate" hreflang="fr" href="https://abiad.me/fr/">
+<link rel="alternate" hreflang="de" href="https://abiad.me/de/">
+<link rel="alternate" hreflang="fa" href="https://abiad.me/fa/">
+<link rel="alternate" hreflang="x-default" href="https://abiad.me/en/">
+<meta property="og:url" content="https://abiad.me/fa/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="لوگوی ربات ابیض">
+<script>
+(function() {
+  var pref = localStorage.getItem('abiad_lang');
+  var map = { ar: '/', en: '/en/', tr: '/tr/', fr: '/fr/', de: '/de/' };
+  if (pref && map[pref]) location.replace(map[pref]);
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://abiad.me/fa/#website",
+      "url": "https://abiad.me/fa/",
+      "name": "ابیض - آزمون‌ساز هوشمند",
+      "inLanguage": "fa",
+      "publisher": { "@id": "https://abiad.me/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://abiad.me/#person",
+      "name": "Mahmoud Abiad",
+      "url": "https://abiad.me/",
+      "image": "https://abiad.me/MahmoudAbiad.jpeg",
+      "sameAs": ["https://t.me/Abiadd"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://abiad.me/fa/#app",
+      "name": "ابیض - آزمون‌ساز هوشمند",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Telegram",
+      "url": "https://abiad.me/fa/",
+      "installUrl": "https://t.me/AbiadQuizMakerbot",
+      "inLanguage": ["ar", "en", "tr", "fr", "de", "fa"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "ربات تلگرام هوشمند برای تبدیل فایل PDF، عکس، صوت و موضوعات درسی به آزمون‌های چهارگزینه‌ای تعاملی با خروجی PDF و Word.",
+      "image": "https://abiad.me/assets/og-image-v5.jpg?v=6",
+      "author": { "@id": "https://abiad.me/#person" }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=14">
+<style>body, button, input { font-family: 'Vazirmatn', system-ui, sans-serif; }</style>
+</head>
+<body>
+<a class="skip-link" href="#main">رفتن به محتوا</a>
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <a class="brand" href="/fa/"><img class="brand__mark" src="/assets/mark.png?v=2" alt="" width="40" height="40"><span>ابیض</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>منو</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="ناوبری اصلی">
+      <a href="/fa/#how">روش کار</a>
+      <a href="/fa/#inside-bot">نمای ربات</a>
+      <a href="/fa/#audience">دانشجو / مدرس</a>
+      <a href="/fa/#points">امتیازها</a>
+      <a href="/en/create-quiz-on-telegram/">راهنما</a>
+    </nav>
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="تغییر زبان">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current">فارسی</span>
+        <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="lang-menu" role="menu">
+        <a href="/" class="lang-option" data-lang="ar" role="menuitem"><span class="lang-name">العربية</span><span class="lang-tag">AR</span></a>
+        <a href="/en/" class="lang-option" data-lang="en" role="menuitem"><span class="lang-name">English</span><span class="lang-tag">EN</span></a>
+        <a href="/tr/" class="lang-option" data-lang="tr" role="menuitem"><span class="lang-name">Türkçe</span><span class="lang-tag">TR</span></a>
+        <a href="/fr/" class="lang-option" data-lang="fr" role="menuitem"><span class="lang-name">Français</span><span class="lang-tag">FR</span></a>
+        <a href="/de/" class="lang-option" data-lang="de" role="menuitem"><span class="lang-name">Deutsch</span><span class="lang-tag">DE</span></a>
+        <a href="/fa/" class="lang-option is-active" data-lang="fa" role="menuitem"><span class="lang-name">فارسی</span><span class="lang-tag">FA</span></a>
+      </div>
+    </div>
+    <a class="btn btn--pen btn--sm site-header__cta" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>شروع در تلگرام</span></a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <h1 class="hero__title">ساخت آزمون هوشمند با هوش مصنوعی از منابع درسی شما</h1>
+      <p class="hero__text">فایل <span class="ltr">PDF</span>، عکس جزوه، ویس کلاس یا حتی عنوان یک موضوع را برای ربات «ابیض» در تلگرام بفرستید تا آزمون چهارگزینه‌ای تعاملی با راهنما، توضیح پاسخ، مرور خطاها و خروجی <span class="ltr">PDF</span> و <span class="ltr">Word</span> برایتان بسازد.</p>
+      <div class="btn-row">
+        <a class="btn btn--pen" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>شروع در تلگرام</span></a>
+        <a class="btn btn--line" href="#how">چطور کار می‌کند؟</a>
+      </div>
+      <p class="hero__hint">شروع با اعتبار هدیه رایگان و تمدید روزانه. هزینه پیش از تأیید نمایش داده می‌شود. پشتیبانی کامل از ۶ زبان در تلگرام.</p>
+    </div>
+
+    <div class="sheet" id="demo-i18n">
+      <div class="sheet__head">
+        <span class="sheet__subject" id="q-subject">زیست‌شناسی</span>
+        <span id="q-count">سؤال ۱ از ۳</span>
+      </div>
+      <p class="sheet__q" id="q-text">کدام اندامک مسئول تولید انرژی در سلول است؟</p>
+      <div class="opts" id="q-opts" role="group" aria-label="گزینه‌های پاسخ"></div>
+      <div class="sheet__feedback" id="q-feedback" aria-live="polite"></div>
+      <div class="sheet__foot">
+        <button type="button" class="btn btn--quiet" id="q-next">سؤال بعدی</button>
+        <span>پیش‌نمایش تعاملی سؤال</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <h2 class="section__title" id="how-title">روش کار و ورودی‌های پشتیبانی‌شده</h2>
+    <p class="section__lede">سه مرحله ساده در یک گفت‌وگوی تلگرام.</p>
+    <ol class="steps">
+      <li class="step"><span class="step__num" aria-hidden="true">۱</span><h3 class="step__title">ارسال جزوه یا موضوع</h3><p class="step__text">فایل PDF، عکس، متن، صوت کلاس یا عنوان موضوع با دستور <span class="ltr">/topic</span>.</p></li>
+      <li class="step"><span class="step__num" aria-hidden="true">۲</span><h3 class="step__title">شخصی‌سازی آزمون</h3><p class="step__text">انتخاب تعداد سؤال، سطح سختی و نوع سؤالات برای ریاضی، زبان‌ها و سایر دروس.</p></li>
+      <li class="step"><span class="step__num" aria-hidden="true">۳</span><h3 class="step__title">پاسخ، مرور و خروجی</h3><p class="step__text">حل آزمون در چت، تمرین روی خطاها، اشتراک‌گذاری یا دریافت فایل PDF/Word.</p></li>
+    </ol>
+    <ul class="inputs" id="inputs" style="margin-top:36px">
+      <li><strong>فایل‌های PDF</strong><span>کتاب‌ها، جزوه‌ها و خلاصه‌درس‌ها. <a href="/en/pdf-to-mcq/">راهنمای PDF</a></span></li>
+      <li><strong>Word و PowerPoint</strong><span>استخراج سؤال از فایل‌های docx، pptx و txt.</span></li>
+      <li><strong>عکس و آلبوم</strong><span>تصاویر صفحات کتاب یا یادداشت‌های درسی.</span></li>
+      <li><strong>صوت کلاس‌ها</strong><span>تبدیل گفتار به متن، خلاصه‌سازی و ساخت آزمون.</span></li>
+      <li><strong>آزمون از موضوع (/topic)</strong><span>بدون نیاز به فایل، فقط موضوع را بنویسید یا ویس کوتاه بفرستید.</span></li>
+      <li><strong>ریاضی و فرمول‌ها</strong><span>نمایش دقیق معادلات، جدول‌ها و ماتریس‌ها به صورت تصویر شفاف.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section bot-gallery" id="inside-bot" aria-labelledby="inside-bot-title">
+  <div class="wrap">
+    <p class="bot-gallery__eyebrow">نمای ربات</p>
+    <h2 class="section__title" id="inside-bot-title">آزمون، مرور خطاها و بازی آموزشی در تلگرام</h2>
+    <p class="section__lede">تصاویر واقعی از محیط موبایل: از پاسخ‌گویی به سؤالات و تمرین خطاها تا بازی آموزشی «سفر ابیض».</p>
+    <div class="bot-gallery__grid">
+      <figure class="bot-shot">
+        <a class="bot-shot__image" href="/assets/screenshots/question-mobile.jpg" target="_blank" rel="noopener noreferrer">
+          <picture><source srcset="/assets/screenshots/question-mobile.webp" type="image/webp"><img src="/assets/screenshots/question-mobile.jpg" alt="نمای سؤال در تلگرام" width="1080" height="1764" loading="lazy" decoding="async"></picture>
+        </a>
+        <figcaption><h3>پاسخ‌گویی در چت</h3><p>چهار گزینه، راهنمای هوشمند و ذخیره در علاقه‌مندی‌ها با یک لمس.</p></figcaption>
+      </figure>
+      <figure class="bot-shot">
+        <a class="bot-shot__image" href="/assets/screenshots/result-mobile.jpg" target="_blank" rel="noopener noreferrer">
+          <picture><source srcset="/assets/screenshots/result-mobile.webp" type="image/webp"><img src="/assets/screenshots/result-mobile.jpg" alt="کارنامه و مرور خطاها" width="1080" height="2340" loading="lazy" decoding="async"></picture>
+        </a>
+        <figcaption><h3>مرور و تمرین خطاها</h3><p>نمره خود را ببینید و فقط سؤالاتی که اشتباه زدید را رایگان تمرین کنید.</p></figcaption>
+      </figure>
+      <figure class="bot-shot" id="abiad-journey">
+        <a class="bot-shot__image" href="/assets/screenshots/journey-driving.jpg" target="_blank" rel="noopener noreferrer">
+          <picture><source srcset="/assets/screenshots/journey-driving.webp" type="image/webp"><img src="/assets/screenshots/journey-driving.jpg" alt="بازی آموزشی سفر ابیض" width="1080" height="2340" loading="lazy" decoding="async"></picture>
+        </a>
+        <figcaption><h3>بازی «سفر ابیض»</h3><p>آزمون خود را به یک بازی تعاملی درون تلگرام تبدیل کنید و با هر پاسخ درست پیش بروید.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="stats" id="stats" aria-labelledby="stats-title" data-stats data-stats-url="https://bot.abiad.me/api/public-stats">
+  <div class="wrap">
+    <h2 class="stats__title" id="stats-title">ابیض در آمار</h2>
+    <div class="stats__grid">
+      <div class="stats__item"><p class="stats__num"><bdi dir="ltr" data-stat="students" data-value="646">646</bdi></p><p class="stats__label">کاربر ثبت‌شده</p></div>
+      <div class="stats__item"><p class="stats__num"><bdi dir="ltr" data-stat="questions" data-value="16775">16,775</bdi></p><p class="stats__label">سؤال تولیدشده</p></div>
+    </div>
+    <p class="stats__note">آمار زنده هنگام بارگذاری صفحه مستقیماً از ربات دریافت می‌شود.</p>
+  </div>
+</section>
+
+<section class="section" id="audience" aria-labelledby="audience-title">
+  <div class="wrap">
+    <h2 class="section__title" id="audience-title">دانشجو یا مدرس</h2>
+    <p class="section__lede">یک حساب کاربری برای هر دو نقش.</p>
+    <div data-tabs>
+      <div class="tabs__list" role="tablist" aria-label="انتخاب نقش">
+        <button class="tabs__tab" role="tab" id="tab-student" aria-selected="true" aria-controls="panel-student" type="button">دانشجو / دانش‌آموز</button>
+        <button class="tabs__tab" role="tab" id="tab-teacher" aria-selected="false" aria-controls="panel-teacher" tabindex="-1" type="button">مدرس / استاد</button>
+      </div>
+      <div class="tabs__panel" role="tabpanel" id="panel-student" aria-labelledby="tab-student" tabindex="0">
+        <dl class="uses">
+          <div class="uses__row"><dt>یادگیری فعال</dt><dd>جزوه‌ها را بفرستید یا با آزمون از موضوع (/topic) دانش خود را سریع بسنجید.</dd></div>
+          <div class="uses__row"><dt>پیاده‌سازی ویس کلاس</dt><dd>فایل‌های صوتی طولانی را به متن، خلاصه یا آزمون تبدیل کنید.</dd></div>
+          <div class="uses__row"><dt>رفع اشکال هدفمند</dt><dd>آزمون‌ها را دسته‌بندی کنید و فقط روی خطاهایتان تمرین کنید.</dd></div>
+        </dl>
+      </div>
+      <div class="tabs__panel" role="tabpanel" id="panel-teacher" aria-labelledby="tab-teacher" tabindex="0" hidden>
+        <dl class="uses">
+          <div class="uses__row"><dt>طراحی آزمون در چند دقیقه</dt><dd>منبع درسی را بارگذاری کرده و تعداد و سطح دشواری سؤالات را تعیین کنید.</dd></div>
+          <div class="uses__row"><dt>آزمون گروهی زنده</dt><dd>برگزاری آزمون در گروه و کانال با زمان‌بندی، گواهینامه و رتبه‌بندی.</dd></div>
+          <div class="uses__row"><dt>خروجی Word و PDF</dt><dd>دریافت نسخه دانشجو (بدون پاسخ) یا نسخه استاد همراه با جدول پاسخنامه.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" id="points" aria-labelledby="points-title">
+  <div class="wrap split">
+    <div>
+      <h2 id="points-title">امتیازها و استفاده</h2>
+      <p>با اعتبار خوش‌آمدگویی رایگان و شارژ رایگان روزانه شروع می‌کنید و می‌توانید از طریق عضویت در کانال، دعوت دوستان و کد هدیه امتیاز بیشتر بگیرید.</p>
+      <p>برای شارژ بیشتر از داخل ربات یا از طریق <a href="https://t.me/Abiadd" target="_blank" rel="noopener noreferrer">@Abiadd</a> اقدام کنید. امتیازها قابل تبدیل به پول نقد نیستند.</p>
+    </div>
+    <div>
+      <h2>پیش از شروع</h2>
+      <p>سؤالات توسط هوش مصنوعی تولید می‌شوند و ممکن است خطا داشته باشند؛ پاسخ‌های مهم را حتماً بررسی کنید.</p>
+      <p class="notice">ابیض برای مطالعه و مرور شخصی ساخته شده و استفاده از آن برای تقلب در امتحانات زنده ممنوع است.</p>
+      <p style="margin-top:16px"><a href="/en/terms-of-service.html">شرایط استفاده</a> · <a href="/en/privacy-policy.html">سیاست حریم خصوصی</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="wrap cta-band__grid">
+    <div>
+      <h2 class="cta-band__title" id="cta-title">اولین آزمون خود را همین حالا بسازید</h2>
+      <p class="cta-band__text">ربات ابیض را در تلگرام باز کنید، جزوه یا موضوعتان را بفرستید و در چند ثانیه آزمون بگیرید.</p>
+      <a class="btn btn--pen" href="https://t.me/AbiadQuizMakerbot?start=website" target="_blank" rel="noopener noreferrer"><span>شروع در تلگرام</span></a>
+      <div class="cta-band__links">
+        <a href="https://t.me/abiadquizmaker" target="_blank" rel="noopener noreferrer">کانال به‌روزرسانی‌ها</a>
+        <a href="https://t.me/AbiadSupportBot" target="_blank" rel="noopener noreferrer">پشتیبانی فنی</a>
+      </div>
+    </div>
+    <img class="cta-band__logo" src="/assets/logo.jpg?v=3" alt="لوگوی ابیض" width="240" height="240" loading="lazy">
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div class="site-footer__id">
+      <img src="/assets/mark.png?v=2" alt="" width="44" height="44" loading="lazy">
+      <div>
+        <p><strong>ابیض - آزمون‌ساز هوشمند</strong> — تمامی حقوق محفوظ است © 2026</p>
+        <p class="site-footer__scope">ربات تلگرام توسعه‌یافته توسط محمود ابیض.</p>
+      </div>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="/fa/">صفحه اصلی</a></li>
+      <li><a href="/en/terms-of-service.html">شرایط استفاده</a></li>
+      <li><a href="/en/privacy-policy.html">حریم خصوصی</a></li>
+      <li><a href="https://t.me/AbiadSupportBot" target="_blank" rel="noopener noreferrer">پشتیبانی</a></li>
+    </ul>
+  </div>
+</footer>
+<script data-goatcounter="https://abiad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="/assets/script.js?v=14"></script>
+<script src="/assets/demo-i18n.js?v=1"></script>
+</body>
+</html>
