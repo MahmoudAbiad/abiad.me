@@ -74,6 +74,44 @@
           "item": "https://abiad.me/en/word-powerpoint-to-quiz/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/en/word-powerpoint-to-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does the bot read tables inside Word documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The bot extracts text from tables alongside paragraph text in docx files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the bot parse images embedded in slides or Word files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Embedded images in Word and PowerPoint documents are not parsed in this workflow. For pptx files, only text inside text boxes is read."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do with an older ppt PowerPoint file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open it in PowerPoint and re-save it as pptx before sending it to the bot. The same applies to legacy doc files: save them as docx first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I send a plain txt file instead of Word?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the bot accepts txt files. If your text is short, you can also paste it directly into the chat (supported between 30 and 8,000 characters)."
+          }
+        }
+      ]
     }
   ]
 }

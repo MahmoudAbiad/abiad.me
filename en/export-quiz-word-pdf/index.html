@@ -74,6 +74,44 @@
           "item": "https://abiad.me/en/export-quiz-word-pdf/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/en/export-quiz-word-pdf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where can I download my quiz from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From the scorecard results screen right after solving the quiz, or from your Favorites list if the quiz is saved there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between the three layout styles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The available themes are \"Clean & Simple\", \"Modern & Colorful\", and \"Classic Academic\". The Classic Academic layout adds a top header line with spaces for Student Name and Date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do math questions appear in exported files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Math formulas and equations are rendered and inserted into exported files as clear, high-resolution images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export lecture summaries as well?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Transcribed audio lecture text and summaries can also be exported to Word or PDF, as explained in our Lecture Transcription Guide."
+          }
+        }
+      ]
     }
   ]
 }
@@ -174,7 +212,10 @@
     </div>
     <figure class="bot-shot">
       <a class="bot-shot__image" href="/assets/screenshots/export-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge screenshot: Download Student or Teacher Edition (opens in new tab)">
-        <img src="/assets/screenshots/export-mobile.jpg" alt="Actual screenshot showing PDF and Word selection for Student or Teacher editions." width="1080" height="2340" loading="lazy" decoding="async">
+                <picture>
+          <source srcset="/assets/screenshots/export-mobile.webp" type="image/webp">
+          <img src="/assets/screenshots/export-mobile.jpg" alt="Actual screenshot showing PDF and Word selection for Student or Teacher editions." width="1080" height="2340" loading="lazy" decoding="async">
+        </picture>
       </a>
       <figcaption><h3>Download Student or Teacher Edition</h3><p>Choose PDF or Word: questions without answers for students, or questions with answers & explanations for teachers.</p><span class="bot-shot__zoom">Click image to enlarge</span></figcaption>
     </figure>

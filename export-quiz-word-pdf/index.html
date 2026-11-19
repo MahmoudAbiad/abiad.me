@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/export-quiz-word-pdf/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/export-quiz-word-pdf/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "تحميل اختبار Word أو PDF",
           "item": "https://abiad.me/export-quiz-word-pdf/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/export-quiz-word-pdf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "من أين أحمّل الاختبار؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "من شاشة النتيجة بعد حلّ الاختبار، أو من المفضلة إن كان الاختبار محفوظاً فيها."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ما الفرق بين الأنماط الثلاثة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الأنماط هي «بسيط وأنيق» و«عصري وملوّن» و«أكاديمي كلاسيكي». والنمط الأكاديمي يضيف سطراً للاسم والتاريخ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف تظهر أسئلة الرياضيات في الملف؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "تُدرَج أسئلة الرياضيات في الملف المصدَّر كصور."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أستطيع تصدير ملخص محاضرة صوتية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، يمكن تصدير نص التفريغ أو الملخص بصيغة Word أو PDF، كما في صفحة تفريغ المحاضرات الصوتية."
+          }
         }
       ]
     }
@@ -177,7 +210,10 @@
     </div>
     <figure class="bot-shot">
       <a class="bot-shot__image" href="/assets/screenshots/export-mobile.jpg" target="_blank" rel="noopener noreferrer" aria-label="تكبير لقطة: حمّل نسخة الطالب أو الأستاذ (تفتح في تبويب جديد)">
-        <img src="/assets/screenshots/export-mobile.jpg" alt="لقطة فعلية لاختيار PDF أو Word بنسخة الطالب أو نسخة الأستاذ." width="1080" height="2340" loading="lazy" decoding="async">
+                <picture>
+          <source srcset="/assets/screenshots/export-mobile.webp" type="image/webp">
+          <img src="/assets/screenshots/export-mobile.jpg" alt="لقطة فعلية لاختيار PDF أو Word بنسخة الطالب أو نسخة الأستاذ." width="1080" height="2340" loading="lazy" decoding="async">
+        </picture>
       </a>
       <figcaption><h3>حمّل نسخة الطالب أو الأستاذ</h3><p>اختر PDF أو Word: أسئلة بلا حلول للطالب، أو أسئلة مع الحلول للأستاذ.</p><span class="bot-shot__zoom">اضغط على الصورة لتكبيرها</span></figcaption>
     </figure>

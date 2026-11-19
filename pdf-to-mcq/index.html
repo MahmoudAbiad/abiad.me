@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/pdf-to-mcq/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/pdf-to-mcq/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "تحويل PDF إلى أسئلة اختيار من متعدد",
           "item": "https://abiad.me/pdf-to-mcq/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/pdf-to-mcq/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "كم حجم ملف PDF وعدد صفحاته المسموح؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "عند إرسال الملف داخل تيليجرام: حتى 20 ميغابايت وحتى 100 صفحة. وعبر صفحة الرفع على الويب: حتى 100 ميغابايت وحتى 150 صفحة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يطّلع مستخدمون آخرون على ملف PDF الذي أرسله؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا، فملفك الأصلي لا يُتاح لمستخدمين آخرين. لكن الاختبار المولَّد منه قد يُخزَّن مركزياً، وإذا رفع مستخدم آخر ملفاً مطابقاً فقد يعرض عليه البوت الاختبار الموجود."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أستطيع توليد اختبار ثانٍ من الملف نفسه؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. يمكنك طلب اختبار جديد من الملف نفسه، ويتجنّب البوت تكرار الأسئلة التي ولّدها سابقاً."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ماذا يحدث للنقاط إذا فشل التوليد؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "تُخصم النقاط قبل بدء التوليد، وتُعاد تلقائياً إذا فشل الطلب."
+          }
         }
       ]
     }

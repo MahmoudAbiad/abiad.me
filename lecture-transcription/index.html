@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/lecture-transcription/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/lecture-transcription/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "تفريغ المحاضرات الصوتية",
           "item": "https://abiad.me/lecture-transcription/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/lecture-transcription/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما أطول محاضرة يمكن تفريغها؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "حتى 4 ساعات. أما الحجم فحتى 20 ميغابايت عند إرسال التسجيل داخل تيليجرام، وحتى 250 ميغابايت عبر صفحة الرفع على الويب."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أعرف التكلفة قبل خصم النقاط؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. يعرض البوت مدة التسجيل وتكلفته بالنقاط، ويطلب تأكيدك قبل الخصم. وقد يُعاد جزء من النقاط إذا اقتُطع الصوت."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يُحتفظ بملف التسجيل بعد التفريغ؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "تُحذف ملفات التسجيل من التخزين المؤقت بعد المعالجة، كما توضّح سياسة الخصوصية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يفهم البوت اللهجات العربية والمحاضرات المختلطة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "المؤكد أنه يتعامل مع اللهجات العربية والإنجليزية والتسجيلات التي تخلط بينهما. ولا نَعِد بنتيجة معيّنة، فراجع النص بعد التفريغ."
+          }
         }
       ]
     }

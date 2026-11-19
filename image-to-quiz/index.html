@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/image-to-quiz/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/image-to-quiz/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "إنشاء اختبار من صورة أو ألبوم صور",
           "item": "https://abiad.me/image-to-quiz/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/image-to-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "كم صورة أستطيع إرسالها في ألبوم تيليجرام؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "حتى 10 صور في الألبوم الواحد. والصورة المنفردة حتى 10 ميغابايت."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ماذا أفعل إن كانت عندي أكثر من 10 صور؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ارفعها عبر صفحة الرفع على الويب: حتى 50 صورة وحتى 15 ميغابايت للصورة. وتُعالَج الدفعة الأكبر من 10 صور بوضع معالجة موازية بتكلفة أعلى."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يقرأ البوت خطي اليدوي أو صور السبورة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا نَعِد بذلك. المواد التي نذكرها هنا هي صور صفحات الكتاب والملخصات والصفحات الدراسية المصوّرة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل تُقرأ الصور الموجودة داخل ملف Word أو PowerPoint؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا، فهذه الصور لا تُقرأ في مسار الملفات. أرسل صفحاتها صوراً عبر هذا المسار بدل ذلك."
+          }
         }
       ]
     }

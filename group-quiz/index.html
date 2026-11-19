@@ -22,12 +22,7 @@
 <script>
 (function() {
   var pref = localStorage.getItem("abiad_lang");
-  if (!pref) {
-    var userLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    if (userLang && !userLang.toLowerCase().startsWith("ar")) {
-      location.replace("/en/group-quiz/");
-    }
-  } else if (pref === "en") {
+  if (pref === "en") {
     location.replace("/en/group-quiz/");
   }
 })();
@@ -75,6 +70,44 @@
           "position": 2,
           "name": "الاختبار الجماعي في المجموعات والقنوات",
           "item": "https://abiad.me/group-quiz/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://abiad.me/group-quiz/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "من يستطيع بدء اختبار جماعي في المجموعة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "مشرف المجموعة أو القناة فقط، بالأمر /groupquiz أو عبر زر المشاركة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يظهر ترتيب نهائي في الوضع المجهول؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا نَعِد بذلك. الوضع المجهول بالكامل بلا نقاط، والترتيب النهائي مرتبط بالوضع التنافسي."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يخصم الاختبار الجماعي نقاطاً؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "تشغيل الاختبار الجماعي نفسه لا يخصم نقاطاً. أما توليد الاختبار من الملف أو الصور فيستهلك نقاطاً كالمعتاد."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أتحكم بسرعة مرور الأسئلة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "باختيار مؤقت لكل سؤال (15 أو 30 أو 45 أو 60 ثانية، أو بلا مؤقت) واختيار وتيرة الإرسال: كل 30 ثانية، أو كل دقيقة، أو كل دقيقتين، أو كل 5 دقائق، أو عند انتهاء المؤقت."
+          }
         }
       ]
     }
